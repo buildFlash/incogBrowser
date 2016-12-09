@@ -13,6 +13,11 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var clearBtn: UIButton!
+   
+//    @IBOutlet weak var startUpView: UIView!
+    
+    
     
     var url: NSURL!
     var request: NSURLRequest!
@@ -20,6 +25,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+     //   startUpView.isHidden = false
         webView.delegate = self
         webView.scrollView.delegate = self
         addressTextField.delegate = self
@@ -28,11 +34,13 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         addressTextField.keyboardType = .webSearch
         addressTextField.clearButtonMode = .whileEditing
         
-        activityIndicator.isHidden = false
+        if let temp = url?.absoluteString, temp == "https://www.duckduckgo.com" {
+            loadSearch()
+        }else{
+            addressTextField.becomeFirstResponder()
+        }
         
-        url = NSURL(string: "https://www.google.com")
-        request = NSURLRequest(url: url as URL)
-        webView.loadRequest(request as URLRequest)
+        activityIndicator.isHidden = true
         
         webView.isUserInteractionEnabled = true
         
@@ -53,13 +61,14 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         print("called")
         if !addUrl.contains("."){
             url = NSURL(string: "https://www.google.com/search?q="+"\(addUrl.replacingOccurrences(of: " ", with: "+"))")
-        }else{
+        }else if !addUrl.contains("https://") || !addUrl.contains("http://"){
             url = NSURL(string: "http://"+"\(addUrl)")
+        }else{
+            url = NSURL(string: "\(addUrl)")
         }
         
         request = NSURLRequest(url: url as URL)
         webView.loadRequest(request as URLRequest)
-        addressTextField.text = url.absoluteString
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -79,6 +88,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
                 print("Swiped right")
                 if webView.canGoBack{
                     webView.goBack()
+                }else{
+                    performSegue(withIdentifier: "reloadHome", sender: nil)
                 }
            
             case UISwipeGestureRecognizerDirection.left:
@@ -97,14 +108,24 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         // Dispose of any resources that can be recreated.
     }
     
+    func loadSearch() {
+        url = NSURL(string: "https://www.duckduckgo.com")
+        request = NSURLRequest(url: url as URL)
+        webView.loadRequest(request as URLRequest)
+
+    }
+    
     func webViewDidStartLoad(_ webView: UIWebView) {
         activityIndicator.isHidden = false
+        clearBtn.isHidden = true
         activityIndicator.startAnimating()
     }
 
     func webViewDidFinishLoad(_ webView: UIWebView) {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
+        clearBtn.isHidden = false
+        addressTextField.text = webView.request?.url?.absoluteString
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
@@ -121,8 +142,38 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             webView.reload()
         }
     }
-
     
+    func clearEverything() {
+        print("cleared")
+        URLCache.shared.removeAllCachedResponses()
+        URLCache.shared.diskCapacity = 0
+        URLCache.shared.memoryCapacity = 0
+        
+       // let cookie = HTTPCookie.self
+        let cookieJar = HTTPCookieStorage.shared
+        
+        for cookie in cookieJar.cookies! {
+            // print(cookie.name+"="+cookie.value)
+            cookieJar.deleteCookie(cookie)
+        }
+        UserDefaults.standard.synchronize()
+
+    }
+
+    @IBAction func clearBtnPressed(_ sender: Any) {
+        clearEverything()
+        loadSearch()
+        performSegue(withIdentifier: "reloadHome", sender: nil)
+    }
+    
+    
+    func resetVC() {
+        print("reset")
+        let storyboard = UIStoryboard(name: "searchStoryboard", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "initialVC") 
+        self.present(controller, animated: true, completion: nil)
+
+    }
 
 }
 

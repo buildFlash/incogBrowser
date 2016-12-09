@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920202251DFB0EBB008D70A2 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920202241DFB0EBB008D70A2 /* InitialVC.swift */; };
 		927732F01DF9A50B0043AC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927732EF1DF9A50B0043AC44 /* AppDelegate.swift */; };
 		927732F21DF9A50B0043AC44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927732F11DF9A50B0043AC44 /* ViewController.swift */; };
 		927732F51DF9A50B0043AC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927732F31DF9A50B0043AC44 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		920202241DFB0EBB008D70A2 /* InitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		927732EC1DF9A50B0043AC44 /* WebApp_Apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebApp_Apple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		927732EF1DF9A50B0043AC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		927732F11DF9A50B0043AC44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				927732EF1DF9A50B0043AC44 /* AppDelegate.swift */,
 				927732F11DF9A50B0043AC44 /* ViewController.swift */,
+				920202241DFB0EBB008D70A2 /* InitialVC.swift */,
 				927732F31DF9A50B0043AC44 /* Main.storyboard */,
 				927732F61DF9A50B0043AC44 /* Assets.xcassets */,
 				927732F81DF9A50B0043AC44 /* LaunchScreen.storyboard */,
@@ -97,7 +100,7 @@
 					927732EB1DF9A50A0043AC44 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 468S6LB8MD;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920202251DFB0EBB008D70A2 /* InitialVC.swift in Sources */,
 				927732F21DF9A50B0043AC44 /* ViewController.swift in Sources */,
 				927732F01DF9A50B0043AC44 /* AppDelegate.swift in Sources */,
 			);
@@ -261,11 +265,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 468S6LB8MD;
 				INFOPLIST_FILE = WebApp_Apple/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "buildFlash.WebApp-Apple";
+				PRODUCT_BUNDLE_IDENTIFIER = buildFlash.IncogBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "42602343-890e-44e6-b1cf-8c55321bec74";
+				PROVISIONING_PROFILE_SPECIFIER = profile_dev_dec_2016;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,11 +281,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 468S6LB8MD;
 				INFOPLIST_FILE = WebApp_Apple/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "buildFlash.WebApp-Apple";
+				PRODUCT_BUNDLE_IDENTIFIER = buildFlash.IncogBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "42602343-890e-44e6-b1cf-8c55321bec74";
+				PROVISIONING_PROFILE_SPECIFIER = profile_dev_dec_2016;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -302,6 +312,7 @@
 				927733001DF9A50B0043AC44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
