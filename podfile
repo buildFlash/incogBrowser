@@ -1,0 +1,4 @@
+target “WebApp_Apple” do
+	pod 'Toaster', '~> 2.0'
+	use_frameworks!
+end

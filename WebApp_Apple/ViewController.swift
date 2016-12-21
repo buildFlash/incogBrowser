@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 
 class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate, UITextFieldDelegate {
 
@@ -17,15 +18,16 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
    
 //    @IBOutlet weak var startUpView: UIView!
     
-    
-    
     var url: NSURL!
     var request: NSURLRequest!
+    var segueUsed: String!
+    var searchEngine: String!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-     //   startUpView.isHidden = false
+        //   startUpView.isHidden = false
         webView.delegate = self
         webView.scrollView.delegate = self
         addressTextField.delegate = self
@@ -34,9 +36,11 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         addressTextField.keyboardType = .webSearch
         addressTextField.clearButtonMode = .whileEditing
         
-        if let temp = url?.absoluteString, temp == "https://www.duckduckgo.com" {
+        if let segue = segueUsed, segue == "google" {
+            print("1")
             loadSearch()
         }else{
+            print("2")
             addressTextField.becomeFirstResponder()
         }
         
@@ -54,13 +58,33 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
         self.webView.scrollView.panGestureRecognizer.require(toFail: swipeLeft)
-
+        
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
+        view.addGestureRecognizer(edgePan)
+    }
+    
+    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            print("Screen edge swiped!")
+            clearEverything()
+            performSegue(withIdentifier: "reloadHome", sender: nil)
+        }
     }
     
     func loadUrl(addUrl: String) {
         print("called")
+        var searchQuery = "https://www.google.com/search?q="
+        if let _ = searchEngine{
+            if searchEngine! == "bing"{
+                searchQuery = "https://www.bing.com/search?q="
+            }
+            else if searchEngine! == "duckduckgo"{
+                searchQuery = "https://duckduckgo.com/?q="
+            }
+        }
         if !addUrl.contains("."){
-            url = NSURL(string: "https://www.google.com/search?q="+"\(addUrl.replacingOccurrences(of: " ", with: "+"))")
+            url = NSURL(string: searchQuery+"\(addUrl.replacingOccurrences(of: " ", with: "+"))")
         }else if !addUrl.contains("https://") || !addUrl.contains("http://"){
             url = NSURL(string: "http://"+"\(addUrl)")
         }else{
@@ -88,8 +112,6 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
                 print("Swiped right")
                 if webView.canGoBack{
                     webView.goBack()
-                }else{
-                    performSegue(withIdentifier: "reloadHome", sender: nil)
                 }
            
             case UISwipeGestureRecognizerDirection.left:
@@ -109,10 +131,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     }
     
     func loadSearch() {
-        url = NSURL(string: "https://www.duckduckgo.com")
         request = NSURLRequest(url: url as URL)
         webView.loadRequest(request as URLRequest)
-
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {
@@ -149,20 +169,16 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         URLCache.shared.diskCapacity = 0
         URLCache.shared.memoryCapacity = 0
         
-       // let cookie = HTTPCookie.self
         let cookieJar = HTTPCookieStorage.shared
-        
         for cookie in cookieJar.cookies! {
-            // print(cookie.name+"="+cookie.value)
             cookieJar.deleteCookie(cookie)
         }
         UserDefaults.standard.synchronize()
-
+        Toast(text: "History Cleared. Phew!!", duration: Delay.long).show()
     }
 
     @IBAction func clearBtnPressed(_ sender: Any) {
         clearEverything()
-        loadSearch()
         performSegue(withIdentifier: "reloadHome", sender: nil)
     }
     
@@ -173,6 +189,10 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         let controller = storyboard.instantiateViewController(withIdentifier: "initialVC") 
         self.present(controller, animated: true, completion: nil)
 
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
 }

@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		694166D03D02BD84A82CE060 /* Pods_WebApp_Apple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1983EE06653ACB9D2C355031 /* Pods_WebApp_Apple.framework */; };
 		920202251DFB0EBB008D70A2 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920202241DFB0EBB008D70A2 /* InitialVC.swift */; };
+		9261F4AB1E0AE05400186D78 /* bing.png in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4A81E0AE05400186D78 /* bing.png */; };
+		9261F4AC1E0AE05400186D78 /* dcd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4A91E0AE05400186D78 /* dcd.png */; };
+		9261F4AD1E0AE05400186D78 /* google.png in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4AA1E0AE05400186D78 /* google.png */; };
+		9261F4B01E0AEB0000186D78 /* www.png in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4AF1E0AEB0000186D78 /* www.png */; };
+		9261F4B21E0AEE5500186D78 /* batman.png in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4B11E0AEE5500186D78 /* batman.png */; };
+		9261F4B41E0AEEA100186D78 /* ubuntu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4B31E0AEEA100186D78 /* ubuntu.png */; };
+		9261F4BA1E0AEFB200186D78 /* wikimedia.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4B91E0AEFB200186D78 /* wikimedia.svg */; };
+		9261F4BC1E0AF10500186D78 /* autobot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4BB1E0AF10500186D78 /* autobot.png */; };
+		9261F4C01E0AF20400186D78 /* Wikimedia-logo-V.png in Resources */ = {isa = PBXBuildFile; fileRef = 9261F4BF1E0AF20400186D78 /* Wikimedia-logo-V.png */; };
+		9261F4C21E0AFA3A00186D78 /* Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9261F4C11E0AFA3A00186D78 /* Toaster.framework */; };
 		927732F01DF9A50B0043AC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927732EF1DF9A50B0043AC44 /* AppDelegate.swift */; };
 		927732F21DF9A50B0043AC44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927732F11DF9A50B0043AC44 /* ViewController.swift */; };
 		927732F51DF9A50B0043AC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927732F31DF9A50B0043AC44 /* Main.storyboard */; };
@@ -16,7 +27,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1983EE06653ACB9D2C355031 /* Pods_WebApp_Apple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebApp_Apple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3254BF5658F2910C00C1808B /* Pods-WebApp_Apple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebApp_Apple.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebApp_Apple/Pods-WebApp_Apple.debug.xcconfig"; sourceTree = "<group>"; };
+		41A1D1648FFEE9BDF1AC4ED9 /* Pods-WebApp_Apple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebApp_Apple.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebApp_Apple/Pods-WebApp_Apple.release.xcconfig"; sourceTree = "<group>"; };
 		920202241DFB0EBB008D70A2 /* InitialVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
+		9261F4A81E0AE05400186D78 /* bing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bing.png; sourceTree = "<group>"; };
+		9261F4A91E0AE05400186D78 /* dcd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dcd.png; sourceTree = "<group>"; };
+		9261F4AA1E0AE05400186D78 /* google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google.png; sourceTree = "<group>"; };
+		9261F4AF1E0AEB0000186D78 /* www.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = www.png; sourceTree = "<group>"; };
+		9261F4B11E0AEE5500186D78 /* batman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batman.png; sourceTree = "<group>"; };
+		9261F4B31E0AEEA100186D78 /* ubuntu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ubuntu.png; sourceTree = "<group>"; };
+		9261F4B91E0AEFB200186D78 /* wikimedia.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = wikimedia.svg; sourceTree = "<group>"; };
+		9261F4BB1E0AF10500186D78 /* autobot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autobot.png; sourceTree = "<group>"; };
+		9261F4BF1E0AF20400186D78 /* Wikimedia-logo-V.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wikimedia-logo-V.png"; sourceTree = "<group>"; };
+		9261F4C11E0AFA3A00186D78 /* Toaster.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toaster.framework; path = "../../Library/Developer/Xcode/DerivedData/WebApp_Apple-elkytnqohzpscwbxjdakdasuvzpu/Build/Products/Debug-iphonesimulator/Toaster/Toaster.framework"; sourceTree = "<group>"; };
 		927732EC1DF9A50B0043AC44 /* WebApp_Apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebApp_Apple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		927732EF1DF9A50B0043AC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		927732F11DF9A50B0043AC44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +55,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9261F4C21E0AFA3A00186D78 /* Toaster.framework in Frameworks */,
+				694166D03D02BD84A82CE060 /* Pods_WebApp_Apple.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236D5A1AE8F63F43F815DCDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9261F4C11E0AFA3A00186D78 /* Toaster.framework */,
+				1983EE06653ACB9D2C355031 /* Pods_WebApp_Apple.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9261F4AE1E0AE05D00186D78 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9261F4BF1E0AF20400186D78 /* Wikimedia-logo-V.png */,
+				9261F4BB1E0AF10500186D78 /* autobot.png */,
+				9261F4B91E0AEFB200186D78 /* wikimedia.svg */,
+				9261F4B31E0AEEA100186D78 /* ubuntu.png */,
+				9261F4B11E0AEE5500186D78 /* batman.png */,
+				9261F4AF1E0AEB0000186D78 /* www.png */,
+				9261F4A81E0AE05400186D78 /* bing.png */,
+				9261F4A91E0AE05400186D78 /* dcd.png */,
+				9261F4AA1E0AE05400186D78 /* google.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		927732E31DF9A50A0043AC44 = {
 			isa = PBXGroup;
 			children = (
 				927732EE1DF9A50B0043AC44 /* WebApp_Apple */,
 				927732ED1DF9A50B0043AC44 /* Products */,
+				C428CDFF3522588DA6B67222 /* Pods */,
+				236D5A1AE8F63F43F815DCDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +109,7 @@
 		927732EE1DF9A50B0043AC44 /* WebApp_Apple */ = {
 			isa = PBXGroup;
 			children = (
+				9261F4AE1E0AE05D00186D78 /* Resources */,
 				927732EF1DF9A50B0043AC44 /* AppDelegate.swift */,
 				927732F11DF9A50B0043AC44 /* ViewController.swift */,
 				920202241DFB0EBB008D70A2 /* InitialVC.swift */,
@@ -67,6 +121,15 @@
 			path = WebApp_Apple;
 			sourceTree = "<group>";
 		};
+		C428CDFF3522588DA6B67222 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3254BF5658F2910C00C1808B /* Pods-WebApp_Apple.debug.xcconfig */,
+				41A1D1648FFEE9BDF1AC4ED9 /* Pods-WebApp_Apple.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 927732FE1DF9A50B0043AC44 /* Build configuration list for PBXNativeTarget "WebApp_Apple" */;
 			buildPhases = (
+				8C05AF66745A2A9508B8A056 /* [CP] Check Pods Manifest.lock */,
 				927732E81DF9A50A0043AC44 /* Sources */,
 				927732E91DF9A50A0043AC44 /* Frameworks */,
 				927732EA1DF9A50A0043AC44 /* Resources */,
+				9DB9828F41541E5129BEB3AD /* [CP] Embed Pods Frameworks */,
+				EDC2A0DA11767E5AF2B8CDEC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -94,7 +160,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Aryan Sharma";
 				TargetAttributes = {
 					927732EB1DF9A50A0043AC44 = {
@@ -127,13 +193,70 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9261F4C01E0AF20400186D78 /* Wikimedia-logo-V.png in Resources */,
+				9261F4B41E0AEEA100186D78 /* ubuntu.png in Resources */,
+				9261F4B21E0AEE5500186D78 /* batman.png in Resources */,
 				927732FA1DF9A50B0043AC44 /* LaunchScreen.storyboard in Resources */,
+				9261F4B01E0AEB0000186D78 /* www.png in Resources */,
 				927732F71DF9A50B0043AC44 /* Assets.xcassets in Resources */,
+				9261F4BA1E0AEFB200186D78 /* wikimedia.svg in Resources */,
+				9261F4BC1E0AF10500186D78 /* autobot.png in Resources */,
 				927732F51DF9A50B0043AC44 /* Main.storyboard in Resources */,
+				9261F4AC1E0AE05400186D78 /* dcd.png in Resources */,
+				9261F4AD1E0AE05400186D78 /* google.png in Resources */,
+				9261F4AB1E0AE05400186D78 /* bing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8C05AF66745A2A9508B8A056 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9DB9828F41541E5129BEB3AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebApp_Apple/Pods-WebApp_Apple-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDC2A0DA11767E5AF2B8CDEC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebApp_Apple/Pods-WebApp_Apple-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		927732E81DF9A50A0043AC44 /* Sources */ = {
@@ -186,6 +309,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -236,6 +360,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -263,6 +388,7 @@
 		};
 		927732FF1DF9A50B0043AC44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3254BF5658F2910C00C1808B /* Pods-WebApp_Apple.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -279,6 +405,7 @@
 		};
 		927733001DF9A50B0043AC44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A1D1648FFEE9BDF1AC4ED9 /* Pods-WebApp_Apple.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
