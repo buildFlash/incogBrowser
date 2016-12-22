@@ -79,14 +79,14 @@
 			children = (
 				92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */,
 				9261F4BF1E0AF20400186D78 /* Wikimedia-logo-V.png */,
+				9261F4A81E0AE05400186D78 /* bing.png */,
+				9261F4A91E0AE05400186D78 /* dcd.png */,
+				9261F4AA1E0AE05400186D78 /* google.png */,
 				9261F4BB1E0AF10500186D78 /* autobot.png */,
 				9261F4B91E0AEFB200186D78 /* wikimedia.svg */,
 				9261F4B31E0AEEA100186D78 /* ubuntu.png */,
 				9261F4B11E0AEE5500186D78 /* batman.png */,
 				9261F4AF1E0AEB0000186D78 /* www.png */,
-				9261F4A81E0AE05400186D78 /* bing.png */,
-				9261F4A91E0AE05400186D78 /* dcd.png */,
-				9261F4AA1E0AE05400186D78 /* google.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

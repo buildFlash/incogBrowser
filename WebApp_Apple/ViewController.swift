@@ -8,6 +8,7 @@
 
 import UIKit
 import Toaster
+import SystemConfiguration
 
 class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate, UITextFieldDelegate {
 
@@ -175,8 +176,14 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     // MARK: URL Processing
     
     func loadSearch() {
-        request = NSURLRequest(url: url as URL)
-        webView.loadRequest(request as URLRequest)
+        
+        if isInternetAvailable() {
+            request = NSURLRequest(url: url as URL)
+            webView.loadRequest(request as URLRequest)
+        }else{
+            removeCurrentToast()
+            Toast(text: "No Internet Connection!!", duration: Delay.short).show()
+        }
     }
     
     func loadUrl(addUrl: String) {
@@ -198,8 +205,14 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             url = NSURL(string: "\(addUrl)")
         }
         
-        request = NSURLRequest(url: url as URL)
-        webView.loadRequest(request as URLRequest)
+        if isInternetAvailable() {
+            request = NSURLRequest(url: url as URL)
+            webView.loadRequest(request as URLRequest)
+        }else{
+            removeCurrentToast()
+            Toast(text: "No Internet Connection!!", duration: Delay.short).show()
+        }
+
     }
     
     
@@ -270,5 +283,29 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    //MARK: Internet Connectivity
+    
+    func isInternetAvailable() -> Bool
+    {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
+    }
+
 }
 

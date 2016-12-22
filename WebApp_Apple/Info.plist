@@ -54,5 +54,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>$(PRODUCT_BUNDLE_IDENTIFIER).Google</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Google</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>google</string>
+		</dict>
+	</array>
 </dict>
 </plist>
