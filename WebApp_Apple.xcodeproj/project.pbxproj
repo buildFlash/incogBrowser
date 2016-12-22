@@ -24,6 +24,7 @@
 		927732F51DF9A50B0043AC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927732F31DF9A50B0043AC44 /* Main.storyboard */; };
 		927732F71DF9A50B0043AC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927732F61DF9A50B0043AC44 /* Assets.xcassets */; };
 		927732FA1DF9A50B0043AC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927732F81DF9A50B0043AC44 /* LaunchScreen.storyboard */; };
+		92EB41E71E0BC7F1009F9F89 /* camouflage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		927732F61DF9A50B0043AC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		927732F91DF9A50B0043AC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		927732FB1DF9A50B0043AC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camouflage.jpg; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		9261F4AE1E0AE05D00186D78 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */,
 				9261F4BF1E0AF20400186D78 /* Wikimedia-logo-V.png */,
 				9261F4BB1E0AF10500186D78 /* autobot.png */,
 				9261F4B91E0AEFB200186D78 /* wikimedia.svg */,
@@ -193,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92EB41E71E0BC7F1009F9F89 /* camouflage.jpg in Resources */,
 				9261F4C01E0AF20400186D78 /* Wikimedia-logo-V.png in Resources */,
 				9261F4B41E0AEEA100186D78 /* ubuntu.png in Resources */,
 				9261F4B21E0AEE5500186D78 /* batman.png in Resources */,

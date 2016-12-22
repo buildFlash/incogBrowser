@@ -15,6 +15,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var clearBtn: UIButton!
+    @IBOutlet weak var camouflageView: UIView!
+    
    
 //    @IBOutlet weak var startUpView: UIView!
     
@@ -23,10 +25,16 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     var segueUsed: String!
     var searchEngine: String!
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        camouflageView.isHidden = true
         webView.delegate = self
         webView.scrollView.delegate = self
         addressTextField.delegate = self
@@ -60,28 +68,42 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tripleTap))
+        tap.numberOfTapsRequired = 3
+        view.addGestureRecognizer(tap)
 
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+
     }
+    
+    func tripleTap() {
+        if camouflageView.isHidden {
+            camouflageView.isHidden = false
+        }else {
+            camouflageView.isHidden = true
+        }
+    }
+    
+    // MARK: application behaviour
     
     func didEnterBackground() {
         print("Entered Background")
     }
-
+    
+    
+    func willEnterForeground() {
+        print("Will enter foreground")
+        camouflageView.isHidden = true
+    }
+    
     func willResignActive() {
         print("application resigned")
-        
-        if let wd = self.view.window {
-            var vc = wd.rootViewController
-            vc = (vc as UIViewController!).presentedViewController
-            if(vc is ViewController){
-                clearEverything()
-                let next:InitialVC = storyboard?.instantiateViewController(withIdentifier: "initialVC") as! InitialVC
-                    self.present(next, animated: false, completion: nil)
-            }
-        }
+        camouflageView.isHidden = false
     }
+    
+    // MARK: Screen Swipe Gestures
     
     func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         if recognizer.state == .recognized {
@@ -89,6 +111,51 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             clearEverything()
             performSegue(withIdentifier: "reloadHome", sender: nil)
         }
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+                if webView.canGoBack{
+                    webView.goBack()
+                    Toast(text: "Back", duration: Delay.short).show()
+                }else{
+                    removeCurrentToast()
+                    Toast(text: "Can't go Back Anymore!!", duration: Delay.short).show()
+                }
+                
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+                if webView.canGoForward {
+                    webView.goForward()
+                    Toast(text: "Next", duration: Delay.short).show()
+                }else{
+                    removeCurrentToast()
+                    Toast(text: "Can't go Forward Anymore!!", duration: Delay.short).show()
+                }
+            default:
+                break
+            }
+        }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        if (scrollView.contentOffset.y < -60){
+            //reach top
+            print("Reach Top")
+            webView.reload()
+            Toast(text: "Refreshed!!", duration: Delay.short).show()
+        }
+    }
+    
+    // MARK: URL Processing
+    
+    func loadSearch() {
+        request = NSURLRequest(url: url as URL)
+        webView.loadRequest(request as URLRequest)
     }
     
     func loadUrl(addUrl: String) {
@@ -114,6 +181,9 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         webView.loadRequest(request as URLRequest)
     }
     
+    
+    // MARK: TextField Delegates
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addressTextField.resignFirstResponder()
         loadUrl(addUrl: addressTextField.text!)
@@ -123,36 +193,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     func textFieldDidBeginEditing(_ textField: UITextField) {
         addressTextField.selectedTextRange = addressTextField.textRange(from: addressTextField.beginningOfDocument, to: addressTextField.endOfDocument)
     }
-
-    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
-        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-            switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
-                print("Swiped right")
-                if webView.canGoBack{
-                    webView.goBack()
-                }
-           
-            case UISwipeGestureRecognizerDirection.left:
-                print("Swiped left")
-                if webView.canGoForward {
-                    webView.goForward()
-                }
-            default:
-                break
-            }
-        }
-    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func loadSearch() {
-        request = NSURLRequest(url: url as URL)
-        webView.loadRequest(request as URLRequest)
-    }
+    // MARK: WebView Delegates
     
     func webViewDidStartLoad(_ webView: UIWebView) {
         activityIndicator.isHidden = false
@@ -170,17 +212,9 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
-        
     }
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        if (scrollView.contentOffset.y < 0){
-            //reach top
-            print("Reach Top")
-            webView.reload()
-        }
-    }
+    // MARK: Clear Functions
     
     func clearEverything() {
         print("cleared")
@@ -188,12 +222,21 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         URLCache.shared.diskCapacity = 0
         URLCache.shared.memoryCapacity = 0
         
+        webView.stringByEvaluatingJavaScript(from: "localStorage.clear();")
         let cookieJar = HTTPCookieStorage.shared
         for cookie in cookieJar.cookies! {
             cookieJar.deleteCookie(cookie)
         }
         UserDefaults.standard.synchronize()
-        Toast(text: "History Cleared. Phew!!", duration: Delay.long).show()
+        
+        removeCurrentToast()
+        Toast(text: "History Cleared. Phew!!", duration: Delay.short).show()
+    }
+    
+    func removeCurrentToast() {
+        if let currentToast = ToastCenter.default.currentToast {
+            currentToast.cancel()
+        }
     }
 
     @IBAction func clearBtnPressed(_ sender: Any) {
@@ -201,9 +244,10 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         performSegue(withIdentifier: "reloadHome", sender: nil)
     }
     
+    // MARK: Defaults
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
 }
 

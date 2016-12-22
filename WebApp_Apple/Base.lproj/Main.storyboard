@@ -163,25 +163,45 @@
                                     <constraint firstAttribute="height" constant="20" id="M57-w6-TS6"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z52-Qd-Z5s">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camouflage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HRo-39-vn5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="HRo-39-vn5" firstAttribute="top" secondItem="Z52-Qd-Z5s" secondAttribute="top" id="0Ad-4j-Cqy"/>
+                                    <constraint firstAttribute="bottom" secondItem="HRo-39-vn5" secondAttribute="bottom" id="4dZ-wE-rEU"/>
+                                    <constraint firstAttribute="trailing" secondItem="HRo-39-vn5" secondAttribute="trailing" id="56E-Rs-Fxm"/>
+                                    <constraint firstItem="HRo-39-vn5" firstAttribute="leading" secondItem="Z52-Qd-Z5s" secondAttribute="leading" id="6n7-A3-CXZ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="O61-e5-nmB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="28p-Xp-NLV"/>
                             <constraint firstItem="mY8-dy-X45" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="8BB-1J-k0X"/>
                             <constraint firstItem="zIg-Of-HAt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8gb-4d-gcd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z52-Qd-Z5s" secondAttribute="bottom" id="CLo-GY-2Eh"/>
                             <constraint firstItem="O61-e5-nmB" firstAttribute="leading" secondItem="mY8-dy-X45" secondAttribute="trailing" constant="10" id="CPV-T0-Ysu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zIg-Of-HAt" secondAttribute="bottom" id="Nvv-Bv-OP2"/>
+                            <constraint firstAttribute="trailing" secondItem="Z52-Qd-Z5s" secondAttribute="trailing" id="RZe-nl-5Rj"/>
                             <constraint firstAttribute="trailing" secondItem="evo-Dq-BDb" secondAttribute="trailing" constant="10" id="SoS-KD-Riz"/>
+                            <constraint firstItem="Z52-Qd-Z5s" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W02-4P-ZcI"/>
                             <constraint firstItem="evo-Dq-BDb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="Yg0-3l-0s8"/>
                             <constraint firstAttribute="trailing" secondItem="zIg-Of-HAt" secondAttribute="trailing" id="lce-Dl-XGK"/>
                             <constraint firstItem="zIg-Of-HAt" firstAttribute="top" secondItem="mY8-dy-X45" secondAttribute="bottom" constant="8" id="px8-8D-7bh"/>
+                            <constraint firstItem="Z52-Qd-Z5s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tIf-cq-uYj"/>
                             <constraint firstItem="mY8-dy-X45" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="vBs-N5-R4b"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zIg-Of-HAt" secondAttribute="bottom" id="yjP-Vt-bwZ"/>
                             <constraint firstAttribute="trailing" secondItem="O61-e5-nmB" secondAttribute="trailing" constant="10" id="zPR-AP-uPi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="O61-e5-nmB" id="u0n-8e-NeS"/>
                         <outlet property="addressTextField" destination="mY8-dy-X45" id="XLG-RI-Sh5"/>
+                        <outlet property="camouflageView" destination="Z52-Qd-Z5s" id="3G5-nb-Hhk"/>
                         <outlet property="clearBtn" destination="evo-Dq-BDb" id="8xg-wK-Yd7"/>
                         <outlet property="webView" destination="zIg-Of-HAt" id="7VQ-88-FGG"/>
                     </connections>
@@ -194,6 +214,7 @@
     <resources>
         <image name="Wikimedia-logo-V.png" width="480" height="480"/>
         <image name="bing.png" width="300" height="300"/>
+        <image name="camouflage.jpg" width="1920" height="1080"/>
         <image name="dcd.png" width="256" height="256"/>
         <image name="google.png" width="1024" height="1024"/>
     </resources>
