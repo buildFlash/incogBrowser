@@ -27,7 +27,6 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //   startUpView.isHidden = false
         webView.delegate = self
         webView.scrollView.delegate = self
         addressTextField.delegate = self
@@ -37,10 +36,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         addressTextField.clearButtonMode = .whileEditing
         
         if let segue = segueUsed, segue == "google" {
-            print("1")
             loadSearch()
         }else{
-            print("2")
             addressTextField.becomeFirstResponder()
         }
         
@@ -62,6 +59,28 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
+        
+
+        NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+    }
+    
+    func didEnterBackground() {
+        print("Entered Background")
+    }
+
+    func willResignActive() {
+        print("application resigned")
+        
+        if let wd = self.view.window {
+            var vc = wd.rootViewController
+            vc = (vc as UIViewController!).presentedViewController
+            if(vc is ViewController){
+                clearEverything()
+                let next:InitialVC = storyboard?.instantiateViewController(withIdentifier: "initialVC") as! InitialVC
+                    self.present(next, animated: false, completion: nil)
+            }
+        }
     }
     
     func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
@@ -180,15 +199,6 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     @IBAction func clearBtnPressed(_ sender: Any) {
         clearEverything()
         performSegue(withIdentifier: "reloadHome", sender: nil)
-    }
-    
-    
-    func resetVC() {
-        print("reset")
-        let storyboard = UIStoryboard(name: "searchStoryboard", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "initialVC") 
-        self.present(controller, animated: true, completion: nil)
-
     }
     
     override var prefersStatusBarHidden: Bool {
