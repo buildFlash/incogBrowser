@@ -24,6 +24,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     var request: NSURLRequest!
     var segueUsed: String!
     var searchEngine: String!
+    
+    @IBOutlet var mainView: UIView!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,6 +54,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         activityIndicator.isHidden = true
         
         webView.isUserInteractionEnabled = true
+        webView.allowsLinkPreview = true
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
@@ -80,9 +83,9 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     
     func tripleTap() {
         if camouflageView.isHidden {
-            camouflageView.isHidden = false
+            showAnimateCamouflageView()
         }else {
-            camouflageView.isHidden = true
+           hideAnimateCamouflageView()
         }
     }
     
@@ -95,12 +98,30 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     
     func willEnterForeground() {
         print("Will enter foreground")
-        camouflageView.isHidden = true
+        hideAnimateCamouflageView()
     }
     
     func willResignActive() {
         print("application resigned")
-        camouflageView.isHidden = false
+        showAnimateCamouflageView()
+        //camouflageView.isHidden = false
+    }
+    
+    // MARK: Animations
+    
+    func hideAnimateCamouflageView() {
+        UIView.animate(withDuration: 0.3, delay: 0, options:UIViewAnimationOptions.transitionCrossDissolve, animations: {
+            self.camouflageView.alpha = 0
+        }, completion: { finished in
+            self.camouflageView.isHidden = true
+        })
+    }
+    
+    func showAnimateCamouflageView() {
+        UIView.transition(with: camouflageView, duration: 0.3, options: .transitionCrossDissolve, animations: {() -> Void in
+            self.camouflageView.alpha = 1
+            self.camouflageView.isHidden = false
+        }, completion: { _ in })
     }
     
     // MARK: Screen Swipe Gestures
@@ -109,7 +130,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         if recognizer.state == .recognized {
             print("Screen edge swiped!")
             clearEverything()
-            performSegue(withIdentifier: "reloadHome", sender: nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -147,7 +168,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             //reach top
             print("Reach Top")
             webView.reload()
-            Toast(text: "Refreshed!!", duration: Delay.short).show()
+            Toast(text: "Refreshing!!", duration: Delay.short).show()
         }
     }
     
@@ -241,7 +262,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
 
     @IBAction func clearBtnPressed(_ sender: Any) {
         clearEverything()
-        performSegue(withIdentifier: "reloadHome", sender: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Defaults

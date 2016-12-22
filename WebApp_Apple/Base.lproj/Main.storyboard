@@ -26,60 +26,60 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AgG-Dt-smD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="651"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dcd.png" translatesAutoresizingMaskIntoConstraints="NO" id="q4M-5u-BG9">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="163"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google.png" translatesAutoresizingMaskIntoConstraints="NO" id="73k-jf-wbR">
-                                                <rect key="frame" x="0.0" y="167" width="375" height="166.5"/>
+                                                <rect key="frame" x="0.0" y="163" width="375" height="162.5"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bing.png" translatesAutoresizingMaskIntoConstraints="NO" id="UXB-9l-Jbs">
-                                                <rect key="frame" x="0.0" y="333.5" width="375" height="167"/>
+                                                <rect key="frame" x="0.0" y="325.5" width="375" height="163"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wikimedia-logo-V.png" translatesAutoresizingMaskIntoConstraints="NO" id="k2y-CS-ysO">
-                                                <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
+                                                <rect key="frame" x="0.0" y="488.5" width="375" height="162.5"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="AgG-Dt-smD" firstAttribute="top" secondItem="Cpv-bN-mb1" secondAttribute="top" id="MES-gt-z1u"/>
+                                    <constraint firstItem="AgG-Dt-smD" firstAttribute="top" secondItem="Cpv-bN-mb1" secondAttribute="top" constant="8" id="MES-gt-z1u"/>
                                     <constraint firstItem="AgG-Dt-smD" firstAttribute="leading" secondItem="Cpv-bN-mb1" secondAttribute="leading" id="dtp-jZ-Mm7"/>
                                     <constraint firstAttribute="trailing" secondItem="AgG-Dt-smD" secondAttribute="trailing" id="vAd-2f-wm5"/>
-                                    <constraint firstAttribute="bottom" secondItem="AgG-Dt-smD" secondAttribute="bottom" id="vP5-no-ExH"/>
+                                    <constraint firstAttribute="bottom" secondItem="AgG-Dt-smD" secondAttribute="bottom" constant="8" id="vP5-no-ExH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jK-jt-pJF">
                                 <rect key="frame" x="8" y="8" width="359" height="651"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KS3-we-4UU">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="651"/>
+                                        <rect key="frame" x="0.0" y="8" width="359" height="635"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCb-vO-BfM">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="163"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="159"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="ddgBtnPressed:" destination="KYz-fc-Nji" eventType="touchUpInside" id="5ow-et-3G6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZS-it-XWX">
-                                                <rect key="frame" x="0.0" y="163" width="359" height="162.5"/>
+                                                <rect key="frame" x="0.0" y="159" width="359" height="158.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="googleBtnPressed:" destination="KYz-fc-Nji" eventType="touchUpInside" id="z52-pF-GRB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCJ-iX-seW">
-                                                <rect key="frame" x="0.0" y="325.5" width="359" height="163"/>
+                                                <rect key="frame" x="0.0" y="317.5" width="359" height="159"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="bingBtnPressed:" destination="KYz-fc-Nji" eventType="touchUpInside" id="U5B-Hx-cLp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lT-1B-JdF">
-                                                <rect key="frame" x="0.0" y="488.5" width="359" height="162.5"/>
+                                                <rect key="frame" x="0.0" y="476.5" width="359" height="158.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="customBtnPressed:" destination="KYz-fc-Nji" eventType="touchUpInside" id="ERG-aL-dEe"/>
@@ -91,9 +91,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="KS3-we-4UU" secondAttribute="trailing" id="0sl-Dm-YRK"/>
-                                    <constraint firstItem="KS3-we-4UU" firstAttribute="top" secondItem="2jK-jt-pJF" secondAttribute="top" id="RKH-c6-Ilh"/>
+                                    <constraint firstItem="KS3-we-4UU" firstAttribute="top" secondItem="2jK-jt-pJF" secondAttribute="top" constant="8" id="RKH-c6-Ilh"/>
                                     <constraint firstItem="KS3-we-4UU" firstAttribute="leading" secondItem="2jK-jt-pJF" secondAttribute="leading" id="UK8-KD-vg5"/>
-                                    <constraint firstAttribute="bottom" secondItem="KS3-we-4UU" secondAttribute="bottom" id="mMb-5Z-r3t"/>
+                                    <constraint firstAttribute="bottom" secondItem="KS3-we-4UU" secondAttribute="bottom" constant="8" id="mMb-5Z-r3t"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -153,7 +153,6 @@
                                 <state key="normal" title="C"/>
                                 <connections>
                                     <action selector="clearBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qbL-fY-OEv"/>
-                                    <segue destination="KYz-fc-Nji" kind="show" identifier="reloadHome" id="Nrh-Lr-aHD"/>
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="O61-e5-nmB">
@@ -166,16 +165,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z52-Qd-Z5s">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camouflage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HRo-39-vn5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incog Neat Oh!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgt-i0-q7P">
+                                        <rect key="frame" x="8" y="320" width="359" height="28"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="HRo-39-vn5" firstAttribute="top" secondItem="Z52-Qd-Z5s" secondAttribute="top" id="0Ad-4j-Cqy"/>
-                                    <constraint firstAttribute="bottom" secondItem="HRo-39-vn5" secondAttribute="bottom" id="4dZ-wE-rEU"/>
-                                    <constraint firstAttribute="trailing" secondItem="HRo-39-vn5" secondAttribute="trailing" id="56E-Rs-Fxm"/>
-                                    <constraint firstItem="HRo-39-vn5" firstAttribute="leading" secondItem="Z52-Qd-Z5s" secondAttribute="leading" id="6n7-A3-CXZ"/>
+                                    <constraint firstItem="Bgt-i0-q7P" firstAttribute="centerY" secondItem="Z52-Qd-Z5s" secondAttribute="centerY" id="Cs8-Me-IHZ"/>
+                                    <constraint firstItem="Bgt-i0-q7P" firstAttribute="leading" secondItem="Z52-Qd-Z5s" secondAttribute="leading" constant="8" id="KXx-DK-GKT"/>
+                                    <constraint firstItem="Bgt-i0-q7P" firstAttribute="centerX" secondItem="Z52-Qd-Z5s" secondAttribute="centerX" id="bk9-kl-9LE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bgt-i0-q7P" secondAttribute="trailing" constant="8" id="tiS-gP-Z8d"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -203,6 +205,7 @@
                         <outlet property="addressTextField" destination="mY8-dy-X45" id="XLG-RI-Sh5"/>
                         <outlet property="camouflageView" destination="Z52-Qd-Z5s" id="3G5-nb-Hhk"/>
                         <outlet property="clearBtn" destination="evo-Dq-BDb" id="8xg-wK-Yd7"/>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="TSf-Fw-Mnh"/>
                         <outlet property="webView" destination="zIg-Of-HAt" id="7VQ-88-FGG"/>
                     </connections>
                 </viewController>
@@ -214,7 +217,6 @@
     <resources>
         <image name="Wikimedia-logo-V.png" width="480" height="480"/>
         <image name="bing.png" width="300" height="300"/>
-        <image name="camouflage.jpg" width="1920" height="1080"/>
         <image name="dcd.png" width="256" height="256"/>
         <image name="google.png" width="1024" height="1024"/>
     </resources>
