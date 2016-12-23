@@ -14,14 +14,16 @@ class InitialVC: UIViewController {
     @IBOutlet weak var customBtn: UIButton!
     @IBOutlet weak var bingBtn: UIButton!
     @IBOutlet weak var ddgBtn: UIButton!
-
     
     var searchEngine: String!
 
+    let vc = ViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
