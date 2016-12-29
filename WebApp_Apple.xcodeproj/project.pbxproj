@@ -24,6 +24,7 @@
 		927732F51DF9A50B0043AC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927732F31DF9A50B0043AC44 /* Main.storyboard */; };
 		927732F71DF9A50B0043AC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 927732F61DF9A50B0043AC44 /* Assets.xcassets */; };
 		927732FA1DF9A50B0043AC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 927732F81DF9A50B0043AC44 /* LaunchScreen.storyboard */; };
+		92B59C861E151DD700E18652 /* Reachablility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B59C851E151DD700E18652 /* Reachablility.swift */; };
 		92EB41E71E0BC7F1009F9F89 /* camouflage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		927732F61DF9A50B0043AC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		927732F91DF9A50B0043AC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		927732FB1DF9A50B0043AC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92B59C851E151DD700E18652 /* Reachablility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachablility.swift; sourceTree = "<group>"; };
 		92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camouflage.jpg; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				927732F61DF9A50B0043AC44 /* Assets.xcassets */,
 				927732F81DF9A50B0043AC44 /* LaunchScreen.storyboard */,
 				927732FB1DF9A50B0043AC44 /* Info.plist */,
+				92B59C851E151DD700E18652 /* Reachablility.swift */,
 			);
 			path = WebApp_Apple;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				920202251DFB0EBB008D70A2 /* InitialVC.swift in Sources */,
 				927732F21DF9A50B0043AC44 /* ViewController.swift in Sources */,
 				927732F01DF9A50B0043AC44 /* AppDelegate.swift in Sources */,
+				92B59C861E151DD700E18652 /* Reachablility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

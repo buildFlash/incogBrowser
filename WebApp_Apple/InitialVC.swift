@@ -22,6 +22,7 @@ class InitialVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        view.layer.cornerRadius = 10
     }
 
     
@@ -97,6 +98,35 @@ class InitialVC: UIViewController {
         return true
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        // ViewControllers view ist fully loaded and could present further ViewController
+        //Here you could do any other UI operations
+        if Reachability.isConnectedToNetwork() == true
+        {
+            print("Connected")
+        }
+        else
+        {
+            let controller = UIAlertController(title: "No Internet Detected", message: "This app requires an Internet connection", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)") // Prints true
+                    })
+                }
+            }
+            controller.addAction(settingsAction)
+            controller.addAction(ok)
+            
+            present(controller, animated: true, completion: nil)
+        }
+        
+    }
+
 
 }

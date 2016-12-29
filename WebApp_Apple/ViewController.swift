@@ -17,6 +17,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var clearBtn: UIButton!
     @IBOutlet weak var camouflageView: UIView!
+    @IBOutlet var mainView: UIView!
+    
     
    
 //    @IBOutlet weak var startUpView: UIView!
@@ -26,8 +28,6 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     var segueUsed: String!
     var searchEngine: String!
     
-    @IBOutlet var mainView: UIView!
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,6 +36,9 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        view.sendSubview(toBack: camouflageView)
+        view.layer.cornerRadius = 10
         
         camouflageView.isHidden = true
         webView.delegate = self
@@ -75,19 +78,34 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         view.addGestureRecognizer(edgePan)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tripleTap))
+        tap.delegate = self
         tap.numberOfTapsRequired = 3
         view.addGestureRecognizer(tap)
+        
+        let twoFingerDoubleTap = UITapGestureRecognizer(target: self, action: #selector(twoFingerTap))
+        twoFingerDoubleTap.delegate = self
+        twoFingerDoubleTap.numberOfTapsRequired = 2
+        twoFingerDoubleTap.numberOfTouchesRequired = 2
+        view.addGestureRecognizer(twoFingerDoubleTap)
 
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
 
     }
     
+    //MARK: Tap Gesture Recognition
+    
+    func twoFingerTap() {
+        print("Two fingers Tapped!!")
+        if !camouflageView.isHidden {
+            hideAnimateCamouflageView()
+        }
+    }
+    
     func tripleTap() {
+        print("Triple Tap!!")
         if camouflageView.isHidden {
             showAnimateCamouflageView()
-        }else {
-           hideAnimateCamouflageView()
         }
     }
     
@@ -95,7 +113,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     
     func willEnterForeground() {
         print("Will enter foreground")
-        hideAnimateCamouflageView()
+       // hideAnimateCamouflageView()
     }
     
     func willResignActive() {
@@ -104,6 +122,9 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         //camouflageView.isHidden = false
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+            return true
+    }
     // MARK: Animations
     
     func hideAnimateCamouflageView() {
@@ -111,14 +132,17 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             self.camouflageView.alpha = 0
         }, completion: { finished in
             self.camouflageView.isHidden = true
+            self.view.sendSubview(toBack: self.camouflageView)
         })
     }
     
     func showAnimateCamouflageView() {
-        UIView.transition(with: camouflageView, duration: 0.3, options: .transitionCrossDissolve, animations: {() -> Void in
+        UIView.animate(withDuration: 0.3, delay: 0, options:UIViewAnimationOptions.transitionCrossDissolve, animations: {
             self.camouflageView.alpha = 1
+        }, completion: { finished in
             self.camouflageView.isHidden = false
-        }, completion: { _ in })
+            self.view.bringSubview(toFront: self.camouflageView)
+        })
     }
     
     // MARK: Screen Swipe Gestures
@@ -175,12 +199,11 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             Toast(text: "Refreshing!!", duration: Delay.short).show()
         }
         
-        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) + 50) {
             //reach bottom
             print("Reached bottom!!")
             easterEgg()
             removeCurrentToast()
-            Toast(text: "Easter Egg!!", duration: Delay.short).show()
         }
     }
     
@@ -192,8 +215,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             request = NSURLRequest(url: url as URL)
             webView.loadRequest(request as URLRequest)
         }else{
-            removeCurrentToast()
-            Toast(text: "No Internet Connection!!", duration: Delay.short).show()
+            noInternetConnection()
         }
     }
     
@@ -220,8 +242,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             request = NSURLRequest(url: url as URL)
             webView.loadRequest(request as URLRequest)
         }else{
-            removeCurrentToast()
-            Toast(text: "No Internet Connection!!", duration: Delay.short).show()
+            noInternetConnection()
         }
 
     }
@@ -319,12 +340,21 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         return (isReachable && !needsConnection)
     }
     
+    func noInternetConnection() {
+        removeCurrentToast()
+        Toast(text: "No Internet", duration: Delay.short).show()
+//        url = NSURL(string: "about:blank")
+//        request = NSURLRequest(url: url as URL)
+//        webView.loadRequest(request as URLRequest)
+    }
+    
     //MARK: Easter Eggs
     func easterEgg() {
         print("easterEgg Called!!")
         if (self.url.absoluteString?.contains("https://www.duckduckgo.com"))! {
             if camouflageView.isHidden {
                 showAnimateCamouflageView()
+                Toast(text: "Easter Egg!!", duration: Delay.short).show()
             }else{
                 print("Camouflage view is hidden!!")
             }
