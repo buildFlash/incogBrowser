@@ -77,16 +77,27 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tripleTap))
-        tap.delegate = self
-        tap.numberOfTapsRequired = 3
-        view.addGestureRecognizer(tap)
+        let tapLockGesture = UITapGestureRecognizer(target: self, action: #selector(tapLock))
+        let tapUnlockGesture = UITapGestureRecognizer(target: self, action: #selector(tapUnlock))
         
-        let twoFingerDoubleTap = UITapGestureRecognizer(target: self, action: #selector(twoFingerTap))
-        twoFingerDoubleTap.delegate = self
-        twoFingerDoubleTap.numberOfTapsRequired = 2
-        twoFingerDoubleTap.numberOfTouchesRequired = 2
-        view.addGestureRecognizer(twoFingerDoubleTap)
+        
+        let defaults = UserDefaults.standard
+        if let tapNumValue = defaults.string(forKey: "tapNum") {
+            tapLockGesture.numberOfTapsRequired = Int(tapNumValue)!
+        }
+        if let touchNumValue = defaults.string(forKey: "touchNum") {
+            tapLockGesture.numberOfTouchesRequired = Int(touchNumValue)!
+        }
+        
+        
+        tapLockGesture.delegate = self
+        //tap.numberOfTapsRequired = 3
+        view.addGestureRecognizer(tapLockGesture)
+        
+        tapUnlockGesture.delegate = self
+        tapUnlockGesture.numberOfTapsRequired = 2
+        tapUnlockGesture.numberOfTouchesRequired = 2
+        view.addGestureRecognizer(tapUnlockGesture)
 
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
@@ -95,15 +106,15 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     
     //MARK: Tap Gesture Recognition
     
-    func twoFingerTap() {
+    func tapUnlock() {
         print("Two fingers Tapped!!")
         if !camouflageView.isHidden {
             hideAnimateCamouflageView()
         }
     }
     
-    func tripleTap() {
-        print("Triple Tap!!")
+    func tapLock() {
+        print("Tap Lock!!")
         if camouflageView.isHidden {
             showAnimateCamouflageView()
         }

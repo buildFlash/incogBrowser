@@ -15,7 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-      //  print("didFinishLaunchingWithOptions called")
+        print("didFinishLaunchingWithOptions called")
+        
+        let isFirstLaunch = UserDefaults.isFirstLaunch()
+        if isFirstLaunch {
+            print("First Launch")
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "FirstLaunchVC")
+            self.window?.rootViewController = controller
+            self.window?.makeKeyAndVisible()
+            
+            return true
+
+            
+        } else {
+            print("Not First Launch")
+        }
+
+        
         return true
     }
 
