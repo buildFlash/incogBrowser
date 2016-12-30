@@ -25,12 +25,6 @@ class FirstLaunchVC: UIViewController {
         if let tapNumValue = defaults.string(forKey: "tapNum") {
             tapNumLbl.text = tapNumValue
             tapStepper.value = Double(tapNumValue)!
-            
-            if self == UIApplication.shared.keyWindow?.rootViewController {
-                cancelBtn.isHidden = true
-            } else {
-                cancelBtn.isHidden = false
-            }
         }
         
         if let touchNumValue = defaults.string(forKey: "touchNum") {
@@ -78,6 +72,8 @@ class FirstLaunchVC: UIViewController {
     @IBAction func cancelBtnPressed(_ sender: Any) {
         if self != UIApplication.shared.keyWindow?.rootViewController {
             self.dismiss(animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "initialSaveSegue", sender: nil)
         }
     }
     
@@ -85,16 +81,5 @@ class FirstLaunchVC: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "initialSaveSegue" {
-//            print(segue.identifier!)
-//            
-//            if let vc = segue.destination as? ViewController {
-//                vc.tap.numberOfTapsRequired = Int(tapNumLbl.text!)!
-//                vc.tap.numberOfTouchesRequired = Int(touchNumLbl.text!)!
-//            }
-//        }
-        
     }
-    
-
 }
