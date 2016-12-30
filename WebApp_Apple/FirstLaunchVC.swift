@@ -16,6 +16,7 @@ class FirstLaunchVC: UIViewController {
     @IBOutlet weak var tapStepper: UIStepper!
     @IBOutlet weak var touchStepper: UIStepper!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
     
     let defaults = UserDefaults.standard
 
@@ -23,12 +24,30 @@ class FirstLaunchVC: UIViewController {
         super.viewDidLoad()
         if let tapNumValue = defaults.string(forKey: "tapNum") {
             tapNumLbl.text = tapNumValue
+            tapStepper.value = Double(tapNumValue)!
+            
+            if self == UIApplication.shared.keyWindow?.rootViewController {
+                cancelBtn.isHidden = true
+            } else {
+                cancelBtn.isHidden = false
+            }
         }
         
         if let touchNumValue = defaults.string(forKey: "touchNum") {
             touchNumLbl.text = touchNumValue
+            touchStepper.value = Double(touchNumValue)!
         }
 
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .right
+        view.addGestureRecognizer(edgePan)
+    }
+    
+    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            print("Screen swiped from left edge!!")
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,10 +67,19 @@ class FirstLaunchVC: UIViewController {
     @IBAction func saveBtnPressed(_ sender: Any) {
         defaults.set(Int(tapNumLbl.text!)!, forKey: "tapNum")
         defaults.set(Int(touchNumLbl.text!)!, forKey: "touchNum")
-        performSegue(withIdentifier: "initialSaveSegue", sender: nil)
+        if self == UIApplication.shared.keyWindow?.rootViewController {
+            performSegue(withIdentifier: "initialSaveSegue", sender: nil)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 
+    @IBAction func cancelBtnPressed(_ sender: Any) {
+        if self != UIApplication.shared.keyWindow?.rootViewController {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     // MARK: - Navigation
 

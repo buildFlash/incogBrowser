@@ -95,8 +95,6 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         view.addGestureRecognizer(tapLockGesture)
         
         tapUnlockGesture.delegate = self
-//        tapUnlockGesture.numberOfTapsRequired = 2
-//        tapUnlockGesture.numberOfTouchesRequired = 2
         view.addGestureRecognizer(tapUnlockGesture)
 
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)

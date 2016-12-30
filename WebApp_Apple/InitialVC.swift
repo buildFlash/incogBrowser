@@ -27,7 +27,7 @@ class InitialVC: UIViewController {
         view.layer.cornerRadius = 10
         
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
-        edgePan.edges = .top
+        edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
 
     }

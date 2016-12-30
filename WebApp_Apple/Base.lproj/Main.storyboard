@@ -139,8 +139,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incog Neat Oh!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgt-i0-q7P">
-                                        <rect key="frame" x="8" y="320" width="359" height="28"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <rect key="frame" x="8" y="317" width="359" height="33"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -280,16 +280,34 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMa-CL-JjN">
-                                <rect key="frame" x="166" y="607" width="44" height="40"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveBtnPressed:" destination="Oeo-Mq-hI4" eventType="touchUpInside" id="gZP-Xc-XXf"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Un1-CL-QCX">
+                                <rect key="frame" x="16" y="617" width="343" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIv-4x-PHe">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelBtnPressed:" destination="Oeo-Mq-hI4" eventType="touchUpInside" id="cif-sM-Udc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMa-CL-JjN">
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="40"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveBtnPressed:" destination="Oeo-Mq-hI4" eventType="touchUpInside" id="gZP-Xc-XXf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lqo-kI-Wgu"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -302,17 +320,19 @@
                             <constraint firstItem="prK-ik-kkh" firstAttribute="leading" secondItem="1ie-I0-4al" secondAttribute="trailing" constant="16" id="D0P-3r-RBQ"/>
                             <constraint firstItem="p37-WS-Q6F" firstAttribute="top" secondItem="KHT-pz-FIO" secondAttribute="bottom" constant="12" id="Jay-Cj-gyE"/>
                             <constraint firstItem="prK-ik-kkh" firstAttribute="top" secondItem="8QR-Tb-dJa" secondAttribute="bottom" constant="8" id="LQY-0J-ODW"/>
-                            <constraint firstItem="byY-19-q19" firstAttribute="top" secondItem="KMa-CL-JjN" secondAttribute="bottom" constant="20" id="Q47-5F-b3Z"/>
-                            <constraint firstItem="KMa-CL-JjN" firstAttribute="centerX" secondItem="45q-9x-mik" secondAttribute="centerX" id="Sb4-cZ-wVh"/>
                             <constraint firstItem="Kk1-tj-0Mn" firstAttribute="top" secondItem="OMo-gB-ncx" secondAttribute="bottom" constant="16" id="Wil-Je-gyQ"/>
                             <constraint firstItem="1ie-I0-4al" firstAttribute="top" secondItem="p37-WS-Q6F" secondAttribute="bottom" constant="16" id="Ygl-LU-cWe"/>
                             <constraint firstItem="OMo-gB-ncx" firstAttribute="top" secondItem="KHT-pz-FIO" secondAttribute="bottom" constant="8" id="a1m-Z4-dGc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8QR-Tb-dJa" secondAttribute="trailing" id="cge-S3-arB"/>
                             <constraint firstItem="OMo-gB-ncx" firstAttribute="leading" secondItem="45q-9x-mik" secondAttribute="leadingMargin" id="dgX-G8-vAZ"/>
+                            <constraint firstItem="byY-19-q19" firstAttribute="top" secondItem="Un1-CL-QCX" secondAttribute="bottom" constant="10" id="iEe-0G-O4D"/>
+                            <constraint firstItem="Un1-CL-QCX" firstAttribute="leading" secondItem="45q-9x-mik" secondAttribute="leadingMargin" id="t3h-nK-W1x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Un1-CL-QCX" secondAttribute="trailing" id="vsD-aX-VMs"/>
                             <constraint firstItem="8QR-Tb-dJa" firstAttribute="top" secondItem="KHT-pz-FIO" secondAttribute="bottom" constant="8" id="xXE-ic-PbS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelBtn" destination="cIv-4x-PHe" id="hqm-lt-srn"/>
                         <outlet property="saveBtn" destination="KMa-CL-JjN" id="sxo-kj-bLp"/>
                         <outlet property="tapNumLbl" destination="p37-WS-Q6F" id="cT5-At-86X"/>
                         <outlet property="tapStepper" destination="8QR-Tb-dJa" id="XwH-68-C6g"/>
