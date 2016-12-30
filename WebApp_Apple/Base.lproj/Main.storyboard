@@ -116,6 +116,7 @@
                         <outlet property="googleBtn" destination="NZS-it-XWX" id="CPd-Aq-8El"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="google" id="bQH-ja-eZj"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="custom" id="voi-qR-D9t"/>
+                        <segue destination="Oeo-Mq-hI4" kind="show" identifier="initialToFirstLaunch" id="l8B-TI-D20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvY-wE-6EJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

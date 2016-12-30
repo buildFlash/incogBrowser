@@ -25,8 +25,20 @@ class InitialVC: UIViewController {
         // Do any additional setup after loading the view.
         
         view.layer.cornerRadius = 10
+        
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .top
+        view.addGestureRecognizer(edgePan)
+
     }
 
+    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            print("Screen swiped from top edge!!")
+            performSegue(withIdentifier: "initialToFirstLaunch", sender: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

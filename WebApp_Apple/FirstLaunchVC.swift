@@ -17,14 +17,18 @@ class FirstLaunchVC: UIViewController {
     @IBOutlet weak var touchStepper: UIStepper!
     @IBOutlet weak var saveBtn: UIButton!
     
-    let tapNumConstant = ""
-    let touchNumConstant = ""
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let tapNumValue = defaults.string(forKey: "tapNum") {
+            tapNumLbl.text = tapNumValue
+        }
         
-        
+        if let touchNumValue = defaults.string(forKey: "touchNum") {
+            touchNumLbl.text = touchNumValue
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

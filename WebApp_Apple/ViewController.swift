@@ -83,20 +83,20 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         
         let defaults = UserDefaults.standard
         if let tapNumValue = defaults.string(forKey: "tapNum") {
-            tapLockGesture.numberOfTapsRequired = Int(tapNumValue)!
+            tapUnlockGesture.numberOfTapsRequired = Int(tapNumValue)!
         }
         if let touchNumValue = defaults.string(forKey: "touchNum") {
-            tapLockGesture.numberOfTouchesRequired = Int(touchNumValue)!
+            tapUnlockGesture.numberOfTouchesRequired = Int(touchNumValue)!
         }
         
         
         tapLockGesture.delegate = self
-        //tap.numberOfTapsRequired = 3
+        tapLockGesture.numberOfTapsRequired = 3
         view.addGestureRecognizer(tapLockGesture)
         
         tapUnlockGesture.delegate = self
-        tapUnlockGesture.numberOfTapsRequired = 2
-        tapUnlockGesture.numberOfTouchesRequired = 2
+//        tapUnlockGesture.numberOfTapsRequired = 2
+//        tapUnlockGesture.numberOfTouchesRequired = 2
         view.addGestureRecognizer(tapUnlockGesture)
 
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
@@ -107,7 +107,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     //MARK: Tap Gesture Recognition
     
     func tapUnlock() {
-        print("Two fingers Tapped!!")
+        print("Tap Unlock!!")
         if !camouflageView.isHidden {
             hideAnimateCamouflageView()
         }
