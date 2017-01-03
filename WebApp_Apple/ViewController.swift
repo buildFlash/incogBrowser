@@ -16,8 +16,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var clearBtn: UIButton!
-    @IBOutlet weak var camouflageView: UIView!
     @IBOutlet var mainView: UIView!
+    var firstRun = true
     
     
    
@@ -37,10 +37,8 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        view.sendSubview(toBack: camouflageView)
         view.layer.cornerRadius = 10
         
-        camouflageView.isHidden = true
         webView.delegate = self
         webView.scrollView.delegate = self
         addressTextField.delegate = self
@@ -77,123 +75,73 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
         
-        let tapLockGesture = UITapGestureRecognizer(target: self, action: #selector(tapLock))
-        let tapUnlockGesture = UITapGestureRecognizer(target: self, action: #selector(tapUnlock))
-        
-        
-        let defaults = UserDefaults.standard
-        if let tapNumValue = defaults.string(forKey: "tapNum") {
-            tapUnlockGesture.numberOfTapsRequired = Int(tapNumValue)!
-        }
-        if let touchNumValue = defaults.string(forKey: "touchNum") {
-            tapUnlockGesture.numberOfTouchesRequired = Int(touchNumValue)!
-        }
-        
-        
+        let tapLockGesture = UITapGestureRecognizer(target: self, action: #selector(tapLock))    
         tapLockGesture.delegate = self
         tapLockGesture.numberOfTapsRequired = 3
         view.addGestureRecognizer(tapLockGesture)
         
-        tapUnlockGesture.delegate = self
-        view.addGestureRecognizer(tapUnlockGesture)
-
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-
     }
     
     //MARK: Tap Gesture Recognition
     
-    func tapUnlock() {
-        print("Tap Unlock!!")
-        if !camouflageView.isHidden {
-            hideAnimateCamouflageView()
-        }
-    }
-    
     func tapLock() {
         print("Tap Lock!!")
-        if camouflageView.isHidden {
-            showAnimateCamouflageView()
-        }
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "LockVC")
+        self.present(vc, animated: false, completion: nil)
     }
     
     // MARK: application behaviour
-    
-    func willEnterForeground() {
-        print("Will enter foreground")
-       // hideAnimateCamouflageView()
-    }
-    
     func willResignActive() {
         print("application resigned")
-        showAnimateCamouflageView()
-        //camouflageView.isHidden = false
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "LockVC") 
+        self.present(vc, animated: false, completion: nil)
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
             return true
     }
-    // MARK: Animations
-    
-    func hideAnimateCamouflageView() {
-        UIView.animate(withDuration: 0.3, delay: 0, options:UIViewAnimationOptions.transitionCrossDissolve, animations: {
-            self.camouflageView.alpha = 0
-        }, completion: { finished in
-            self.camouflageView.isHidden = true
-            self.view.sendSubview(toBack: self.camouflageView)
-        })
-    }
-    
-    func showAnimateCamouflageView() {
-        UIView.animate(withDuration: 0.3, delay: 0, options:UIViewAnimationOptions.transitionCrossDissolve, animations: {
-            self.camouflageView.alpha = 1
-        }, completion: { finished in
-            self.camouflageView.isHidden = false
-            self.view.bringSubview(toFront: self.camouflageView)
-        })
-    }
     
     // MARK: Screen Swipe Gestures
     
     func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
-        if camouflageView.isHidden{
-            if recognizer.state == .recognized {
-                print("Screen edge swiped!")
-                clearEverything()
-                self.dismiss(animated: true, completion: nil)
-            }
+        if recognizer.state == .recognized {
+            print("Screen edge swiped!")
+            clearBtnPressed(Any.self)
         }
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
-        if camouflageView.isHidden{
-            if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-                switch swipeGesture.direction {
-                case UISwipeGestureRecognizerDirection.right:
-                    print("Swiped right")
-                    if webView.canGoBack{
-                        webView.goBack()
-                        removeCurrentToast()
-                        Toast(text: "Back", duration: Delay.short).show()
-                    }else{
-                        removeCurrentToast()
-                        Toast(text: "Can't go Back Anymore!!", duration: Delay.short).show()
-                    }
-                    
-                case UISwipeGestureRecognizerDirection.left:
-                    print("Swiped left")
-                    if webView.canGoForward {
-                        removeCurrentToast()
-                        webView.goForward()
-                        Toast(text: "Next", duration: Delay.short).show()
-                    }else{
-                        removeCurrentToast()
-                        Toast(text: "Can't go Forward Anymore!!", duration: Delay.short).show()
-                    }
-                default:
-                    break
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+                if webView.canGoBack{
+                    webView.goBack()
+                    removeCurrentToast()
+                    Toast(text: "Back", duration: Delay.short).show()
+                }else{
+                    removeCurrentToast()
+                    Toast(text: "Can't go Back Anymore!!", duration: Delay.short).show()
                 }
+                
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+                if webView.canGoForward {
+                    removeCurrentToast()
+                    webView.goForward()
+                    Toast(text: "Next", duration: Delay.short).show()
+                }else{
+                    removeCurrentToast()
+                    Toast(text: "Can't go Forward Anymore!!", duration: Delay.short).show()
+                }
+            default:
+                break
             }
         }
     }
@@ -211,7 +159,6 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) + 50) {
             //reach bottom
             print("Reached bottom!!")
-            easterEgg()
             removeCurrentToast()
         }
     }
@@ -306,6 +253,22 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         
         removeCurrentToast()
         Toast(text: "History Cleared. Phew!!", duration: Delay.short).show()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func clearAtStartup() {
+        URLCache.shared.removeAllCachedResponses()
+        URLCache.shared.diskCapacity = 0
+        URLCache.shared.memoryCapacity = 0
+        
+        webView.stringByEvaluatingJavaScript(from: "localStorage.clear();")
+        let cookieJar = HTTPCookieStorage.shared
+        for cookie in cookieJar.cookies! {
+            cookieJar.deleteCookie(cookie)
+        }
+        UserDefaults.standard.synchronize()
+        print("cleared by viewDidAppear")
+
     }
     
     func removeCurrentToast() {
@@ -317,7 +280,6 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
 
     @IBAction func clearBtnPressed(_ sender: Any) {
         clearEverything()
-        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Defaults
@@ -326,7 +288,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         return true
     }
     
-    //MARK: Internet Connectivity
+    // MARK: Internet Connectivity
     
     func isInternetAvailable() -> Bool
     {
@@ -352,22 +314,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     func noInternetConnection() {
         removeCurrentToast()
         Toast(text: "No Internet", duration: Delay.short).show()
-//        url = NSURL(string: "about:blank")
-//        request = NSURLRequest(url: url as URL)
-//        webView.loadRequest(request as URLRequest)
     }
     
-    //MARK: Easter Eggs
-    func easterEgg() {
-        print("easterEgg Called!!")
-        if (self.url.absoluteString?.contains("https://www.duckduckgo.com"))! {
-            if camouflageView.isHidden {
-                showAnimateCamouflageView()
-                Toast(text: "Easter Egg!!", duration: Delay.short).show()
-            }else{
-                print("Camouflage view is hidden!!")
-            }
-        }
-    }
 }
 

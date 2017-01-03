@@ -12,25 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let defaults = UserDefaults.standard
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print("didFinishLaunchingWithOptions called")
-        
+
         let isFirstLaunch = UserDefaults.isFirstLaunch()
         if isFirstLaunch {
             print("First Launch")
-            
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "FirstLaunchVC")
-            self.window?.rootViewController = controller
-            self.window?.makeKeyAndVisible()
-            
-            return true
-
-            
+          return true
         } else {
             print("Not First Launch")
         }
@@ -58,9 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+        print("app terminated")
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

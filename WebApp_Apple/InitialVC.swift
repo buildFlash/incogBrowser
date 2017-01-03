@@ -16,7 +16,7 @@ class InitialVC: UIViewController {
     @IBOutlet weak var ddgBtn: UIButton!
     
     var connectedToInternet = false
-    
+    var isFirstLaunch = UserDefaults.isFirstLaunch()
     var searchEngine: String!
 
     let vc = ViewController()
@@ -25,18 +25,20 @@ class InitialVC: UIViewController {
         // Do any additional setup after loading the view.
         
         view.layer.cornerRadius = 10
-        
-        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
-        edgePan.edges = .left
-        view.addGestureRecognizer(edgePan)
-
+       
+        NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
     }
 
-    func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
-        if recognizer.state == .recognized {
-            print("Screen swiped from top edge!!")
-            performSegue(withIdentifier: "initialToFirstLaunch", sender: nil)
-        }
+    
+    func willResignActive() {
+        print("application resigned")
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "LockVC")
+        self.present(vc, animated: false, completion: nil)
+        
+    }
+    
+    @IBAction func unwindToMain(segue:UIStoryboardSegue) {
     }
     
     override func didReceiveMemoryWarning() {
@@ -111,9 +113,19 @@ class InitialVC: UIViewController {
         return true
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         // ViewControllers view ist fully loaded and could present further ViewController
         //Here you could do any other UI operations
+        
+        if (isFirstLaunch == true) {
+            print("first launch segued")
+            UIView.setAnimationsEnabled(false)
+            performSegue(withIdentifier: "showPageVC", sender: self)
+            UIView.setAnimationsEnabled(true)
+            isFirstLaunch = false
+        }
+        
         
         if connectedToInternet == false {
             if Reachability.isConnectedToNetwork() == true
