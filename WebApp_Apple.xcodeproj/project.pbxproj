@@ -28,6 +28,7 @@
 		92B59C881E15273D00E18652 /* NSUserDefaults+isFirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B59C871E15273D00E18652 /* NSUserDefaults+isFirstLaunch.swift */; };
 		92B59C8C1E168B0B00E18652 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B59C8B1E168B0B00E18652 /* PageVC.swift */; };
 		92B59C8E1E16907B00E18652 /* FinalPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B59C8D1E16907B00E18652 /* FinalPageVC.swift */; };
+		92CB0AD11E30AED00078FE74 /* refreshIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 92CB0AD01E30AED00078FE74 /* refreshIcon.png */; };
 		92EB41E71E0BC7F1009F9F89 /* camouflage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */; };
 		92F480611E1B952E00C47827 /* LockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F480601E1B952E00C47827 /* LockVC.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		92B59C871E15273D00E18652 /* NSUserDefaults+isFirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefaults+isFirstLaunch.swift"; sourceTree = "<group>"; };
 		92B59C8B1E168B0B00E18652 /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		92B59C8D1E16907B00E18652 /* FinalPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalPageVC.swift; sourceTree = "<group>"; };
+		92CB0AD01E30AED00078FE74 /* refreshIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshIcon.png; sourceTree = "<group>"; };
 		92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camouflage.jpg; sourceTree = SOURCE_ROOT; };
 		92F480601E1B952E00C47827 /* LockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */,
+				92CB0AD01E30AED00078FE74 /* refreshIcon.png */,
 				9261F4BF1E0AF20400186D78 /* Wikimedia-logo-V.png */,
 				9261F4A81E0AE05400186D78 /* bing.png */,
 				9261F4A91E0AE05400186D78 /* dcd.png */,
@@ -99,6 +102,27 @@
 				9261F4AF1E0AEB0000186D78 /* www.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		9270AC4F1E28D2600043A986 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				92B59C8B1E168B0B00E18652 /* PageVC.swift */,
+				92B59C8D1E16907B00E18652 /* FinalPageVC.swift */,
+				92F480601E1B952E00C47827 /* LockVC.swift */,
+				920202241DFB0EBB008D70A2 /* InitialVC.swift */,
+				927732F11DF9A50B0043AC44 /* ViewController.swift */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		9270AC501E28D27C0043A986 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				92B59C851E151DD700E18652 /* Reachablility.swift */,
+				92B59C871E15273D00E18652 /* NSUserDefaults+isFirstLaunch.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		927732E31DF9A50A0043AC44 = {
@@ -122,15 +146,10 @@
 		927732EE1DF9A50B0043AC44 /* WebApp_Apple */ = {
 			isa = PBXGroup;
 			children = (
+				9270AC4F1E28D2600043A986 /* VC */,
+				9270AC501E28D27C0043A986 /* Helper */,
 				9261F4AE1E0AE05D00186D78 /* Resources */,
 				927732EF1DF9A50B0043AC44 /* AppDelegate.swift */,
-				92B59C851E151DD700E18652 /* Reachablility.swift */,
-				92B59C871E15273D00E18652 /* NSUserDefaults+isFirstLaunch.swift */,
-				92B59C8B1E168B0B00E18652 /* PageVC.swift */,
-				92B59C8D1E16907B00E18652 /* FinalPageVC.swift */,
-				92F480601E1B952E00C47827 /* LockVC.swift */,
-				920202241DFB0EBB008D70A2 /* InitialVC.swift */,
-				927732F11DF9A50B0043AC44 /* ViewController.swift */,
 				927732F31DF9A50B0043AC44 /* Main.storyboard */,
 				927732F61DF9A50B0043AC44 /* Assets.xcassets */,
 				927732F81DF9A50B0043AC44 /* LaunchScreen.storyboard */,
@@ -215,6 +234,7 @@
 				9261F4C01E0AF20400186D78 /* Wikimedia-logo-V.png in Resources */,
 				9261F4B41E0AEEA100186D78 /* ubuntu.png in Resources */,
 				9261F4B21E0AEE5500186D78 /* batman.png in Resources */,
+				92CB0AD11E30AED00078FE74 /* refreshIcon.png in Resources */,
 				927732FA1DF9A50B0043AC44 /* LaunchScreen.storyboard in Resources */,
 				9261F4B01E0AEB0000186D78 /* www.png in Resources */,
 				927732F71DF9A50B0043AC44 /* Assets.xcassets in Resources */,
