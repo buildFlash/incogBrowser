@@ -25,7 +25,9 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     
     var firstRun = true
     
-    
+    var swipeLeft: UISwipeGestureRecognizer!
+    var swipeRight: UISwipeGestureRecognizer!
+
     
     
    
@@ -62,13 +64,12 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         webView.allowsInlineMediaPlayback = true
         webView.allowsPictureInPictureMediaPlayback = true
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
         self.webView.scrollView.panGestureRecognizer.require(toFail: swipeRight)
 
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
         self.webView.scrollView.panGestureRecognizer.require(toFail: swipeLeft)
@@ -154,14 +155,17 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         
     }
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-            return true
-    }
-    
-    
-    
     
     // MARK: Screen Swipe Gestures
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        view.removeGestureRecognizer(swipeLeft)
+        view.removeGestureRecognizer(swipeRight)
+    }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         
@@ -265,17 +269,18 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     // MARK: URL Processing
     
     func loadSearch() {
-        
+        print("called loadSearch")
         if isInternetAvailable() {
             request = NSURLRequest(url: url as URL)
             webView.loadRequest(request as URLRequest)
         }else{
             noInternetConnection()
         }
+//        addressTextField.text = webView.request?.url?.absoluteString
     }
     
     func loadUrl(addUrl: String) {
-        print("called")
+        print("called loadUrl")
         var searchQuery = "https://www.google.com/search?q="
         if let _ = searchEngine{
             if searchEngine! == "bing"{
@@ -298,10 +303,11 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         if isInternetAvailable(), searchQuery != "" {
             request = NSURLRequest(url: url as URL)
             webView.loadRequest(request as URLRequest)
+//            addressTextField.text = webView.request?.url?.absoluteString
         }else{
             noInternetConnection()
         }
-
+//        addressTextField.text = webView.request?.url?.absoluteString
     }
     
     
@@ -319,12 +325,17 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     
     // MARK: WebView Delegates
     
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        addressTextField.text = webView.request?.url?.absoluteString
+        return true
+    }
+    
     func webViewDidStartLoad(_ webView: UIWebView) {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         StopRefreshBtn.setImage(nil, for: .normal)
         StopRefreshBtn.setTitle("X", for: .normal)
-        StopRefreshBtn.setTitleColor(UIColor.white, for: .normal)
+        StopRefreshBtn.setTitleColor(UIColor.black, for: .normal)
         addressTextField.text = webView.request?.url?.absoluteString
     }
     
@@ -334,6 +345,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         activityIndicator.isHidden = true
         StopRefreshBtn.setTitle(nil, for: .normal)
         StopRefreshBtn.setImage(UIImage(named: "refreshIcon"), for: .normal)
+        addressTextField.text = webView.request?.url?.absoluteString
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
@@ -341,6 +353,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         activityIndicator.isHidden = true
         StopRefreshBtn.setTitle(nil, for: .normal)
         StopRefreshBtn.setImage(UIImage(named: "refreshIcon"), for: .normal)
+        addressTextField.text = webView.request?.url?.absoluteString
     }
     
     // MARK: Buttons
@@ -398,6 +411,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             }
             request = NSURLRequest(url: url as URL)
             webView.loadRequest(request as URLRequest)
+            addressTextField.text = webView.request?.url?.absoluteString
         }
     }
     
