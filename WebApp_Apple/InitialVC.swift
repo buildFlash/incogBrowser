@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class InitialVC: UIViewController {
     
@@ -18,6 +19,8 @@ class InitialVC: UIViewController {
     var connectedToInternet = false
     var isFirstLaunch = UserDefaults.isFirstLaunch()
     var searchEngine: String!
+    let defaults = UserDefaults.standard
+
 
     let vc = ViewController()
     override func viewDidLoad() {
@@ -25,8 +28,38 @@ class InitialVC: UIViewController {
         // Do any additional setup after loading the view.
         
         view.layer.cornerRadius = 10
+        self.becomeFirstResponder()
        
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+    }
+    
+    
+    
+    var count = 0
+    
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if(event?.subtype == UIEventSubtype.motionShake) {
+            print("You shook me, now what")
+            if count == defaults.integer(forKey: "count"){
+                playSound()
+            }
+        }
+    }
+
+    var player: AVAudioPlayer?
+    
+    func playSound() {
+        let url = Bundle.main.url(forResource: "whip", withExtension: "mp3")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 
     
@@ -104,6 +137,9 @@ class InitialVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         // ViewControllers view ist fully loaded and could present further ViewController
         //Here you could do any other UI operations
+        
+        defaults.set(0, forKey: "count")
+
         
         if (isFirstLaunch == true) {
             print("first launch segued")

@@ -9,6 +9,7 @@
 import UIKit
 import Toaster
 import SystemConfiguration
+import UserNotifications
 
 class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate, UITextFieldDelegate {
 
@@ -17,16 +18,18 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var clearBtn: UIButton!
     @IBOutlet weak var StopRefreshBtn: UIButton!
-    @IBOutlet weak var topBarStackView: UIStackView!
+    @IBOutlet weak var topBarStackView: UIView!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var incogView: UIView!
     @IBOutlet weak var mainStackView: UIStackView!
     
+    @IBOutlet weak var AddressBarConstraint: NSLayoutConstraint!
     
-    var firstRun = true
-    
+    var isFirstLoad = true
     var swipeLeft: UISwipeGestureRecognizer!
     var swipeRight: UISwipeGestureRecognizer!
+    var isGrantedNotificationAccess:Bool = false
+    let defaults = UserDefaults.standard
 
     
     
@@ -48,6 +51,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         
         incogView.isHidden = true
         view.layer.cornerRadius = 10
+        isFirstLoad = true
         
         webView.delegate = self
         webView.scrollView.delegate = self
@@ -66,23 +70,27 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         
         swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
-        self.view.addGestureRecognizer(swipeRight)
-        self.webView.scrollView.panGestureRecognizer.require(toFail: swipeRight)
+//        self.view.addGestureRecognizer(swipeRight)
+//        self.webView.scrollView.panGestureRecognizer.require(toFail: swipeRight)
 
         swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
-        self.view.addGestureRecognizer(swipeLeft)
-        self.webView.scrollView.panGestureRecognizer.require(toFail: swipeLeft)
+//        self.view.addGestureRecognizer(swipeLeft)
+//        self.webView.scrollView.panGestureRecognizer.require(toFail: swipeLeft)
         
 
         let edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgeSwiped))
         edgeGesture.edges = .left
         webView.addGestureRecognizer(edgeGesture)
         
+        let rightEdgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgeSwiped))
+        rightEdgeGesture.edges = .right
+        webView.addGestureRecognizer(rightEdgeGesture)
+        
         let tapLockGesture = UITapGestureRecognizer(target: self, action: #selector(tapLock))    
         tapLockGesture.delegate = self
         tapLockGesture.numberOfTapsRequired = 3
-        view.addGestureRecognizer(tapLockGesture)
+        webView.addGestureRecognizer(tapLockGesture)
         
         NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
         
@@ -100,7 +108,43 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         }
         
         
-
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: [.alert,.sound,.badge],
+            completionHandler: { (granted,error) in
+                self.isGrantedNotificationAccess = granted
+        })
+        userNotifs()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        defaults.set(1, forKey: "count")
+    }
+    
+    func userNotifs() {
+        if isGrantedNotificationAccess {
+            let content = UNMutableNotificationContent()
+            content.title = "Quit App"
+            content.subtitle = "Clear Everything"
+            content.categoryIdentifier = "message"
+        
+        
+        //Set the trigger of the notification -- here a timer.
+        let trigger = UNTimeIntervalNotificationTrigger(
+            timeInterval: 1.0,
+            repeats: false)
+            
+            
+        //Set the request for the notification from the above
+        let request = UNNotificationRequest(
+            identifier: "10.second.message",
+            content: content,
+            trigger: trigger
+        )
+        
+        //Add the notification to the currnet notification center
+        UNUserNotificationCenter.current().add(
+            request, withCompletionHandler: nil)
+        }
     }
     
     //MARK: Tap Gesture Recognition
@@ -108,8 +152,28 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     func edgeSwiped(_ gestureRecognizer: UIScreenEdgePanGestureRecognizer) {
         if gestureRecognizer.state == .recognized{
             print("edge")
-            clearBtnPressed(Any.self)
-            self.dismiss(animated: true, completion: nil)
+            if gestureRecognizer.edges == .right{
+                print("Swiped right")
+                if webView.canGoForward{
+                    webView.goForward()
+                    removeCurrentToast()
+                    Toast(text: "Back", duration: Delay.short).show()
+                }else{
+                    removeCurrentToast()
+                    Toast(text: "Can't go Forward Anymore!!", duration: Delay.short).show()
+                }
+            }
+            if gestureRecognizer.edges == .left{
+                print("Swiped right")
+                if webView.canGoBack{
+                    webView.goBack()
+                    removeCurrentToast()
+                    Toast(text: "Back", duration: Delay.short).show()
+                }else{
+                    removeCurrentToast()
+                    Toast(text: "Can't go Back Anymore!!", duration: Delay.short).show()
+                }
+            }
         }
     }
     
@@ -162,10 +226,41 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         return true
     }
     
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        view.removeGestureRecognizer(swipeLeft)
-        view.removeGestureRecognizer(swipeRight)
-    }
+//    var zoomLevel: CGFloat!
+//    var zoomLevelAfterZoomedOut: CGFloat!
+//    
+//    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+//        print(scrollView.zoomScale)
+//
+//        if scrollView.isZooming {
+//            zoomLevel = scrollView.zoomScale
+//        } else {
+//            zoomLevelAfterZoomedOut = scrollView.zoomScale
+//        }
+//    }
+//    
+//    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+//        print("didEndZooming")
+//        print(scrollView.zoomScale)
+//        if let zoomCheck = zoomLevel{
+//            if zoomCheck > 1.0{
+//                view?.removeGestureRecognizer(swipeLeft)
+//                print("removed Left")
+//                view?.removeGestureRecognizer(swipeRight)
+//                print("removed Right")
+//            }
+//        }
+//        
+//        if let zoomCheck = zoomLevelAfterZoomedOut{
+//            print(zoomCheck)
+//            if(zoomLevel * zoomCheck == 1.0) {
+//                view?.addGestureRecognizer(swipeRight)
+//                print("added right")
+//                view?.addGestureRecognizer(swipeLeft)
+//                print("added Left")
+//            }
+//        }
+//    }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         
@@ -333,6 +428,16 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     func webViewDidStartLoad(_ webView: UIWebView) {
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
+        if !isFirstLoad{
+            AddressBarConstraint.constant += 28
+            UIView.animate(withDuration: 0.3) {
+                self.addressTextField.layoutIfNeeded()
+            }
+        }else {
+                isFirstLoad = false
+        }
+    
+
         StopRefreshBtn.setImage(nil, for: .normal)
         StopRefreshBtn.setTitle("X", for: .normal)
         StopRefreshBtn.setTitleColor(UIColor.black, for: .normal)
@@ -343,6 +448,10 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     func webViewDidFinishLoad(_ webView: UIWebView) {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
+        AddressBarConstraint.constant -= 28
+        UIView.animate(withDuration: 0.3) {
+            self.addressTextField.layoutIfNeeded()
+        }
         StopRefreshBtn.setTitle(nil, for: .normal)
         StopRefreshBtn.setImage(UIImage(named: "refreshIcon"), for: .normal)
         addressTextField.text = webView.request?.url?.absoluteString
@@ -351,6 +460,10 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
+        AddressBarConstraint.constant -= 28
+        UIView.animate(withDuration: 0.5) {
+            self.addressTextField.layoutIfNeeded()
+        }
         StopRefreshBtn.setTitle(nil, for: .normal)
         StopRefreshBtn.setImage(UIImage(named: "refreshIcon"), for: .normal)
         addressTextField.text = webView.request?.url?.absoluteString
@@ -359,6 +472,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     // MARK: Buttons
     
     @IBAction func BackBtnPressed(_ sender: Any) {
+        clearBtnPressed(Any.self)
         self.dismiss(animated: true, completion: nil)
         print("Back Btn")
     }

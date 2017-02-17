@@ -29,6 +29,7 @@
 		92B59C8C1E168B0B00E18652 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B59C8B1E168B0B00E18652 /* PageVC.swift */; };
 		92B59C8E1E16907B00E18652 /* FinalPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B59C8D1E16907B00E18652 /* FinalPageVC.swift */; };
 		92CB0AD11E30AED00078FE74 /* refreshIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 92CB0AD01E30AED00078FE74 /* refreshIcon.png */; };
+		92D748AD1E56D55400D51102 /* whip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92D748AC1E56D55400D51102 /* whip.mp3 */; };
 		92EB41E71E0BC7F1009F9F89 /* camouflage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */; };
 		92F480611E1B952E00C47827 /* LockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F480601E1B952E00C47827 /* LockVC.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		92B59C8B1E168B0B00E18652 /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		92B59C8D1E16907B00E18652 /* FinalPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalPageVC.swift; sourceTree = "<group>"; };
 		92CB0AD01E30AED00078FE74 /* refreshIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshIcon.png; sourceTree = "<group>"; };
+		92D748AC1E56D55400D51102 /* whip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = whip.mp3; sourceTree = "<group>"; };
 		92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camouflage.jpg; sourceTree = SOURCE_ROOT; };
 		92F480601E1B952E00C47827 /* LockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 			children = (
 				92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */,
 				92CB0AD01E30AED00078FE74 /* refreshIcon.png */,
+				92D748AC1E56D55400D51102 /* whip.mp3 */,
 				9261F4BF1E0AF20400186D78 /* Wikimedia-logo-V.png */,
 				9261F4A81E0AE05400186D78 /* bing.png */,
 				9261F4A91E0AE05400186D78 /* dcd.png */,
@@ -241,6 +244,7 @@
 				9261F4BA1E0AEFB200186D78 /* wikimedia.svg in Resources */,
 				9261F4BC1E0AF10500186D78 /* autobot.png in Resources */,
 				927732F51DF9A50B0043AC44 /* Main.storyboard in Resources */,
+				92D748AD1E56D55400D51102 /* whip.mp3 in Resources */,
 				9261F4AC1E0AE05400186D78 /* dcd.png in Resources */,
 				9261F4AD1E0AE05400186D78 /* google.png in Resources */,
 				9261F4AB1E0AE05400186D78 /* bing.png in Resources */,
@@ -445,6 +449,7 @@
 				PROVISIONING_PROFILE = "42602343-890e-44e6-b1cf-8c55321bec74";
 				PROVISIONING_PROFILE_SPECIFIER = profile_dev_dec_2016;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,6 +468,7 @@
 				PROVISIONING_PROFILE = "42602343-890e-44e6-b1cf-8c55321bec74";
 				PROVISIONING_PROFILE_SPECIFIER = profile_dev_dec_2016;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

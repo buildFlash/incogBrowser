@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("Not First Launch")
         }
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
+        
         return true
     }
     
@@ -54,3 +62,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+//extension AppDelegate: UNUserNotificationCenterDelegate {
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        
+//        if response.actionIdentifier == "remindLater" {
+//            let newDate = Date(timeInterval: 900, since: Date())
+//            scheduleNotification(at: newDate)
+//        }
+//    }
+//}
