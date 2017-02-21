@@ -192,7 +192,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search or Enter the Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-dy-X45">
-                                                <rect key="frame" x="75" y="8" width="265" height="30"/>
+                                                <rect key="frame" x="75" y="8" width="293" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -244,7 +244,7 @@
                                             <constraint firstAttribute="height" constant="46" id="MGx-mk-d0f"/>
                                             <constraint firstItem="mY8-dy-X45" firstAttribute="top" secondItem="gaJ-oF-20u" secondAttribute="top" constant="8" id="RYI-uw-fbl"/>
                                             <constraint firstAttribute="bottom" secondItem="O61-e5-nmB" secondAttribute="bottom" constant="13" id="aJF-TD-PB1"/>
-                                            <constraint firstAttribute="trailing" secondItem="mY8-dy-X45" secondAttribute="trailing" constant="74" id="fZb-Bc-rjX"/>
+                                            <constraint firstAttribute="trailing" secondItem="mY8-dy-X45" secondAttribute="trailing" constant="46" id="fZb-Bc-rjX"/>
                                             <constraint firstAttribute="bottom" secondItem="mY8-dy-X45" secondAttribute="bottom" constant="8" id="lJh-pA-PbQ"/>
                                             <constraint firstItem="qQz-AN-z8i" firstAttribute="top" secondItem="gaJ-oF-20u" secondAttribute="top" constant="8" id="pK7-Sq-Z9z"/>
                                         </constraints>

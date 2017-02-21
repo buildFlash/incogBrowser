@@ -108,7 +108,6 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             loadSearch()
         }else{
             addressTextField.becomeFirstResponder()
-            AddressBarConstraint.constant -= 28
         }
         
         
@@ -430,16 +429,17 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {
+        AddressBarConstraint.constant += 28
+        UIView.animate(withDuration: 0.3) {
+            self.addressTextField.layoutIfNeeded()
+        }
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
-        if !isFirstLoad{
-            AddressBarConstraint.constant += 28
-            UIView.animate(withDuration: 0.3) {
-                self.addressTextField.layoutIfNeeded()
-            }
-        }else {
-                isFirstLoad = false
-        }
+//        if !isFirstLoad{
+//            
+//        }else {
+//                isFirstLoad = false
+//        }
     
         stopBtn()
         addressTextField.text = webView.request?.url?.absoluteString
