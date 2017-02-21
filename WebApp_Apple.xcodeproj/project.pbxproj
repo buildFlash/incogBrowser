@@ -446,7 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = buildFlash.IncogBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "42602343-890e-44e6-b1cf-8c55321bec74";
+				PROVISIONING_PROFILE = "7e75256d-5dd7-4acd-abfb-607a6d6c0498";
 				PROVISIONING_PROFILE_SPECIFIER = profile_dev_dec_2016;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

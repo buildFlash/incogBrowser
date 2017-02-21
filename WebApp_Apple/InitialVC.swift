@@ -141,13 +141,13 @@ class InitialVC: UIViewController {
         defaults.set(0, forKey: "count")
 
         
-        if (isFirstLaunch == true) {
-            print("first launch segued")
-            UIView.setAnimationsEnabled(false)
-            performSegue(withIdentifier: "showPageVC", sender: self)
-            UIView.setAnimationsEnabled(true)
-            isFirstLaunch = false
-        }
+//        if (isFirstLaunch == true) {
+//            print("first launch segued")
+//            UIView.setAnimationsEnabled(false)
+//            performSegue(withIdentifier: "showPageVC", sender: self)
+//            UIView.setAnimationsEnabled(true)
+//            isFirstLaunch = false
+//        }
         
         
 //        if connectedToInternet == false {

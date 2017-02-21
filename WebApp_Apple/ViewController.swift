@@ -53,6 +53,9 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         view.layer.cornerRadius = 10
         isFirstLoad = true
         
+        refreshBtn()
+//        AddressBarConstraint.constant -= 28
+        
         webView.delegate = self
         webView.scrollView.delegate = self
         addressTextField.delegate = self
@@ -105,47 +108,48 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
             loadSearch()
         }else{
             addressTextField.becomeFirstResponder()
+            AddressBarConstraint.constant -= 28
         }
         
         
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: [.alert,.sound,.badge],
-            completionHandler: { (granted,error) in
-                self.isGrantedNotificationAccess = granted
-        })
-        userNotifs()
+//        UNUserNotificationCenter.current().requestAuthorization(
+//            options: [.alert,.sound,.badge],
+//            completionHandler: { (granted,error) in
+//                self.isGrantedNotificationAccess = granted
+//        })
+//        userNotifs()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         defaults.set(1, forKey: "count")
     }
     
-    func userNotifs() {
-        if isGrantedNotificationAccess {
-            let content = UNMutableNotificationContent()
-            content.title = "Quit App"
-            content.subtitle = "Clear Everything"
-            content.categoryIdentifier = "message"
-        
-        
-        //Set the trigger of the notification -- here a timer.
-        let trigger = UNTimeIntervalNotificationTrigger(
-            timeInterval: 1.0,
-            repeats: false)
-            
-            
-        //Set the request for the notification from the above
-        let request = UNNotificationRequest(
-            identifier: "10.second.message",
-            content: content,
-            trigger: trigger
-        )
-        
-        //Add the notification to the currnet notification center
-        UNUserNotificationCenter.current().add(
-            request, withCompletionHandler: nil)
-        }
-    }
+//    func userNotifs() {
+//        if isGrantedNotificationAccess {
+//            let content = UNMutableNotificationContent()
+//            content.title = "Quit App"
+//            content.subtitle = "Clear Everything"
+//            content.categoryIdentifier = "message"
+//        
+//        
+//        //Set the trigger of the notification -- here a timer.
+//        let trigger = UNTimeIntervalNotificationTrigger(
+//            timeInterval: 1.0,
+//            repeats: false)
+//            
+//            
+//        //Set the request for the notification from the above
+//        let request = UNNotificationRequest(
+//            identifier: "10.second.message",
+//            content: content,
+//            trigger: trigger
+//        )
+//        
+//        //Add the notification to the currnet notification center
+//        UNUserNotificationCenter.current().add(
+//            request, withCompletionHandler: nil)
+//        }
+//    }
     
     //MARK: Tap Gesture Recognition
     
@@ -437,10 +441,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
                 isFirstLoad = false
         }
     
-
-        StopRefreshBtn.setImage(nil, for: .normal)
-        StopRefreshBtn.setTitle("X", for: .normal)
-        StopRefreshBtn.setTitleColor(UIColor.black, for: .normal)
+        stopBtn()
         addressTextField.text = webView.request?.url?.absoluteString
     }
     
@@ -452,8 +453,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         UIView.animate(withDuration: 0.3) {
             self.addressTextField.layoutIfNeeded()
         }
-        StopRefreshBtn.setTitle(nil, for: .normal)
-        StopRefreshBtn.setImage(UIImage(named: "refreshIcon"), for: .normal)
+        refreshBtn()
         addressTextField.text = webView.request?.url?.absoluteString
     }
     
@@ -464,12 +464,22 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
         UIView.animate(withDuration: 0.5) {
             self.addressTextField.layoutIfNeeded()
         }
-        StopRefreshBtn.setTitle(nil, for: .normal)
-        StopRefreshBtn.setImage(UIImage(named: "refreshIcon"), for: .normal)
+        refreshBtn()
         addressTextField.text = webView.request?.url?.absoluteString
     }
     
     // MARK: Buttons
+    
+    func stopBtn() {
+        StopRefreshBtn.setImage(nil, for: .normal)
+        StopRefreshBtn.setTitle("X", for: .normal)
+        StopRefreshBtn.setTitleColor(UIColor.black, for: .normal)
+    }
+    
+    func refreshBtn() {
+        StopRefreshBtn.setTitle(nil, for: .normal)
+        StopRefreshBtn.setImage(UIImage(named: "refreshIcon"), for: .normal)
+    }
     
     @IBAction func BackBtnPressed(_ sender: Any) {
         clearBtnPressed(Any.self)
