@@ -30,6 +30,10 @@
 		92B59C8E1E16907B00E18652 /* FinalPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B59C8D1E16907B00E18652 /* FinalPageVC.swift */; };
 		92CB0AD11E30AED00078FE74 /* refreshIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 92CB0AD01E30AED00078FE74 /* refreshIcon.png */; };
 		92D748AD1E56D55400D51102 /* whip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92D748AC1E56D55400D51102 /* whip.mp3 */; };
+		92E94BD91E5DFA7800AAA955 /* earth_1024px.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E94BD81E5DFA7800AAA955 /* earth_1024px.png */; };
+		92E94BDB1E5DFC3100AAA955 /* earth_1024px_ex_blue_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E94BDA1E5DFC3100AAA955 /* earth_1024px_ex_blue_5.png */; };
+		92E94BDD1E5E00D600AAA955 /* ios app store icon (1024px)_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E94BDC1E5E00D600AAA955 /* ios app store icon (1024px)_Green.png */; };
+		92E94BDF1E5E059000AAA955 /* buildflash_ICON_No_Baground.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E94BDE1E5E059000AAA955 /* buildflash_ICON_No_Baground.png */; };
 		92EB41E71E0BC7F1009F9F89 /* camouflage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */; };
 		92F480611E1B952E00C47827 /* LockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F480601E1B952E00C47827 /* LockVC.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +66,10 @@
 		92B59C8D1E16907B00E18652 /* FinalPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalPageVC.swift; sourceTree = "<group>"; };
 		92CB0AD01E30AED00078FE74 /* refreshIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshIcon.png; sourceTree = "<group>"; };
 		92D748AC1E56D55400D51102 /* whip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = whip.mp3; sourceTree = "<group>"; };
+		92E94BD81E5DFA7800AAA955 /* earth_1024px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_1024px.png; sourceTree = "<group>"; };
+		92E94BDA1E5DFC3100AAA955 /* earth_1024px_ex_blue_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth_1024px_ex_blue_5.png; sourceTree = "<group>"; };
+		92E94BDC1E5E00D600AAA955 /* ios app store icon (1024px)_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios app store icon (1024px)_Green.png"; sourceTree = "<group>"; };
+		92E94BDE1E5E059000AAA955 /* buildflash_ICON_No_Baground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buildflash_ICON_No_Baground.png; sourceTree = "<group>"; };
 		92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = camouflage.jpg; sourceTree = SOURCE_ROOT; };
 		92F480601E1B952E00C47827 /* LockVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,11 +101,15 @@
 			children = (
 				92EB41E61E0BC7F1009F9F89 /* camouflage.jpg */,
 				92CB0AD01E30AED00078FE74 /* refreshIcon.png */,
+				92E94BD81E5DFA7800AAA955 /* earth_1024px.png */,
 				92D748AC1E56D55400D51102 /* whip.mp3 */,
 				9261F4BF1E0AF20400186D78 /* Wikimedia-logo-V.png */,
+				92E94BDA1E5DFC3100AAA955 /* earth_1024px_ex_blue_5.png */,
 				9261F4A81E0AE05400186D78 /* bing.png */,
 				9261F4A91E0AE05400186D78 /* dcd.png */,
 				9261F4AA1E0AE05400186D78 /* google.png */,
+				92E94BDC1E5E00D600AAA955 /* ios app store icon (1024px)_Green.png */,
+				92E94BDE1E5E059000AAA955 /* buildflash_ICON_No_Baground.png */,
 				9261F4BB1E0AF10500186D78 /* autobot.png */,
 				9261F4B91E0AEFB200186D78 /* wikimedia.svg */,
 				9261F4B31E0AEEA100186D78 /* ubuntu.png */,
@@ -233,11 +245,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E94BDF1E5E059000AAA955 /* buildflash_ICON_No_Baground.png in Resources */,
 				92EB41E71E0BC7F1009F9F89 /* camouflage.jpg in Resources */,
 				9261F4C01E0AF20400186D78 /* Wikimedia-logo-V.png in Resources */,
+				92E94BDD1E5E00D600AAA955 /* ios app store icon (1024px)_Green.png in Resources */,
 				9261F4B41E0AEEA100186D78 /* ubuntu.png in Resources */,
 				9261F4B21E0AEE5500186D78 /* batman.png in Resources */,
+				92E94BDB1E5DFC3100AAA955 /* earth_1024px_ex_blue_5.png in Resources */,
 				92CB0AD11E30AED00078FE74 /* refreshIcon.png in Resources */,
+				92E94BD91E5DFA7800AAA955 /* earth_1024px.png in Resources */,
 				927732FA1DF9A50B0043AC44 /* LaunchScreen.storyboard in Resources */,
 				9261F4B01E0AEB0000186D78 /* www.png in Resources */,
 				927732F71DF9A50B0043AC44 /* Assets.xcassets in Resources */,

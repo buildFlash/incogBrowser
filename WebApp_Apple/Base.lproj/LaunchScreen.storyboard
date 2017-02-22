@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,27 +22,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go Incog-Neat-Oh!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="727-kh-xeo">
-                                <rect key="frame" x="8" y="318" width="359" height="32"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hootyApps®" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v94-EW-AxU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hootyApps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v94-EW-AxU">
                                 <rect key="frame" x="16" y="631" width="343" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buildflash_ICON_No_Baground.png" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-ze-5rf">
+                                <rect key="frame" x="124" y="270" width="128" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="QQB-zf-4SJ"/>
+                                    <constraint firstAttribute="width" constant="128" id="SFT-uQ-qpG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go Incog-Neat-Oh!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="727-kh-xeo">
+                                <rect key="frame" x="8" y="499" width="359" height="32"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.37647058823529411" green="0.67843137254901964" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="727-kh-xeo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9bk-6i-c2S"/>
                             <constraint firstAttribute="trailing" secondItem="727-kh-xeo" secondAttribute="trailing" constant="8" id="F8c-qp-A87"/>
-                            <constraint firstItem="727-kh-xeo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HIw-J9-REb"/>
+                            <constraint firstItem="v94-EW-AxU" firstAttribute="top" secondItem="727-kh-xeo" secondAttribute="bottom" constant="100" id="RZt-ZK-qch"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="v94-EW-AxU" secondAttribute="bottom" constant="20" id="XqR-Eb-rne"/>
                             <constraint firstItem="v94-EW-AxU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="haA-yh-8r4"/>
                             <constraint firstItem="727-kh-xeo" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="qAE-sk-2VP"/>
                             <constraint firstItem="v94-EW-AxU" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="tyz-f1-LYD"/>
+                            <constraint firstItem="mPG-ze-5rf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="wwp-Aj-OsZ"/>
+                            <constraint firstItem="mPG-ze-5rf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zgc-qd-J3q"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -51,4 +62,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="buildflash_ICON_No_Baground.png" width="1024" height="1024"/>
+    </resources>
 </document>
