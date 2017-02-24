@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-WebApp_Apple.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7ADE7023050AE720349EEF3E9D542560</key>
+		<key>2D3830CDBF7C9E2A95E3ABB84D4986EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A32805DCEE554973003A1442924B3B73</key>
+		<key>388C836969D8024DD04397A184B39149</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>77979430716929ED71E6E262A9F9A184</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C74D47B051BF84CA30E0723F127F42AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

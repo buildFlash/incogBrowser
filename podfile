@@ -1,4 +1,8 @@
 target “WebApp_Apple” do
 	pod 'Toaster', '~> 2.0'
+	source 'https://github.com/CocoaPods/Specs.git'
+	pod 'FontAwesome.swift'
 	use_frameworks!
 end
+
+

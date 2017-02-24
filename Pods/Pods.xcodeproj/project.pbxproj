@@ -7,87 +7,153 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17E3E238447DA1461F5DF2E74B90D64E /* Toaster-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0902FF52820DCF8812B10A54AC134 /* Toaster-dummy.m */; };
-		4930E59B07A905FB7C49DEBA13AD7FE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC32878090C4B2B93381956161EC0930 /* Foundation.framework */; };
-		53DEC6659F4EA4CE570477420D0CF4F1 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688134426F38DC90F4ABFA9D14EA9757 /* ToastView.swift */; };
-		6ECAB6464B0ABBF77B3B159A5A3EE9C4 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCDC858ACB8E47645D63C177CB72F5E /* Toast.swift */; };
-		71567CBE8447787D996FAE632C584270 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */; };
-		7729BE0DE1E1CB9F158C1B9FBF5479CA /* Pods-WebApp_Apple-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91C79D125B298F9C740D8EA7A3106519 /* Pods-WebApp_Apple-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		849D4D5C17A275C9A55FF6C721FE1875 /* Toaster-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1DA8994C5871D9D18251ADBB8FB1D4C /* Toaster-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		971BF8B76CD367CDC460B3DBF9C252BD /* Pods-WebApp_Apple-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B42A539BCA84F0AAD8845205845F61 /* Pods-WebApp_Apple-dummy.m */; };
-		AA44CA357A8A1E46E7B231B64FC9CB6F /* ToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A641F9DEAADAB16E0691C4F07A085B /* ToastWindow.swift */; };
-		B0ABE2CC9AD0BCF34983E7FF166E4AC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC32878090C4B2B93381956161EC0930 /* Foundation.framework */; };
-		C7916269EDDEE6777D63B20DAEBAA58F /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A218884A5D8B9EE76C135EFA2F609D /* ToastCenter.swift */; };
-		EFC61E6ED08E81587456B656895F7C0F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF675A168132FD52AED630F977FE906 /* UIKit.framework */; };
-		F054E7F1EFF73AB54890860E9980F7E9 /* Toaster.h in Headers */ = {isa = PBXBuildFile; fileRef = B1AF126F98257836AB2EB7D4F4AC4C96 /* Toaster.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C03CB07A1BF399CDE7CBB68DBAEE6B5 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7D50B23CBD915DCC35C995F130B6243 /* FontAwesome.otf */; };
+		15064BE99B3392B5C279A026601D7DE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7C6B1F087D994C9EC4732C58EBFBA5 /* UIKit.framework */; };
+		1859113A28D674DBA366EF81366330C0 /* FontAwesomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD409D60D75BDD05B1D3C69626B064 /* FontAwesomeView.swift */; };
+		1B4CA305CD4B1FC051813BC9D5BCD257 /* Toaster-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC879ABA2D6CDFAFFDA85D2C356E3FCF /* Toaster-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37B85F555A38364C44DB54684713A900 /* FontAwesome.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87AC9F692489AB13BFA35565D40548E6 /* FontAwesome.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FF1AFBB54035E92F37DF0D0367AACEB /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B949CB8E79E4664F5BCB9A3C9FA6D1F0 /* Toast.swift */; };
+		54FB652687DF1B17283960918C008F02 /* Toaster.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE1E6FF9F5046C6FA737D02567F5DCA /* Toaster.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C0B36CA70286C8DD0002A8E94CC4553 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11231A9A62539DACA552777E2C37A0C7 /* FontAwesome.swift */; };
+		5E18D737C6AD556ACF07E09400A3634D /* ToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D93710506D4A428351A0388ABDC6CE /* ToastWindow.swift */; };
+		6AF5B52CE8521B567A3F704308E51AD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28F57A5F07B072EAEC564D36AC6C78D /* Foundation.framework */; };
+		78634BE628ADC6C859CA2B112A9677D1 /* Toaster-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AFEDD993E289E7DE6F3BEBF1561F58 /* Toaster-dummy.m */; };
+		7DE3E62D329F26A90F380826B7460AA4 /* FontAwesome.swift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 21F29E4B77FF0CBB30265B26C4296D9D /* FontAwesome.swift.bundle */; };
+		89A713C3580CF73FF840557C92370CBD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D741AE82305179C3D796A84CFA7AD5 /* QuartzCore.framework */; };
+		9BEEEF24E72C5320582031B587A61CAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28F57A5F07B072EAEC564D36AC6C78D /* Foundation.framework */; };
+		A9EFE58009BD6B86680E4A973ED070B8 /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E8046BAE570512194A490F8AD28ED4 /* ToastCenter.swift */; };
+		BDABD08615569870C769E2B9AAA28CC9 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9FCC9F55CA378C97F02D192B3D615 /* ToastView.swift */; };
+		BED5EC9770C0ADD3B9A60A028F99F432 /* FontAwesome.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A8BCE712A14B5CBC07DC7D57ADA40 /* FontAwesome.swift-dummy.m */; };
+		C2BB6143A772EDE7F6C338C2349EC210 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 677BD20CCF699E480225F577E20A63CC /* CoreText.framework */; };
+		C2BF28F2B3085B993F1D424DF9A6ABBB /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B45AD521980A8F1F8B201380DE6B1 /* Enum.swift */; };
+		D4ADF982957A59935094D94A08440219 /* Pods-WebApp_Apple-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B42A539BCA84F0AAD8845205845F61 /* Pods-WebApp_Apple-dummy.m */; };
+		DD13CA2F3E077FB79326C90385C78C7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28F57A5F07B072EAEC564D36AC6C78D /* Foundation.framework */; };
+		DEE1958A22E215D607510DD0F493E33C /* Pods-WebApp_Apple-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91C79D125B298F9C740D8EA7A3106519 /* Pods-WebApp_Apple-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E10B07A258A306A0CBEB0B39396987C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7C6B1F087D994C9EC4732C58EBFBA5 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A34BA2EF7486E738CF9DF883C59EB863 /* PBXContainerItemProxy */ = {
+		011D7568536311BAD488B69A72CD5841 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7ADE7023050AE720349EEF3E9D542560;
+			remoteGlobalIDString = C74D47B051BF84CA30E0723F127F42AD;
+			remoteInfo = FontAwesome.swift;
+		};
+		5085E297C1F024798B0B288CF003B84E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 388C836969D8024DD04397A184B39149;
 			remoteInfo = Toaster;
+		};
+		E94380D2D52F1407587989E526482389 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77979430716929ED71E6E262A9F9A184;
+			remoteInfo = "FontAwesome.swift-FontAwesome.swift";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10CEA1E37568195121B9BCABC51CE066 /* Toaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Toaster.modulemap; sourceTree = "<group>"; };
+		1071269796BA5CD5D016D410915EADD3 /* FontAwesome.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FontAwesome.swift.xcconfig; sourceTree = "<group>"; };
+		11231A9A62539DACA552777E2C37A0C7 /* FontAwesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesome.swift; path = FontAwesome/FontAwesome.swift; sourceTree = "<group>"; };
 		214071446966CE3CA14D941DF440C78F /* Pods-WebApp_Apple-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WebApp_Apple-acknowledgements.plist"; sourceTree = "<group>"; };
-		34FB8884E1F6A090B24E86387B72FF40 /* Toaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toaster.framework; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21F29E4B77FF0CBB30265B26C4296D9D /* FontAwesome.swift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FontAwesome.swift.bundle; path = FontAwesome.swift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BE1E6FF9F5046C6FA737D02567F5DCA /* Toaster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Toaster.h; path = Sources/Toaster.h; sourceTree = "<group>"; };
+		2D773FF918C8BA535B7D8310194766D6 /* Toaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Toaster.modulemap; sourceTree = "<group>"; };
+		2FB279E9B2C4C1BD20A0FC1FB95E7AE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36AFEDD993E289E7DE6F3BEBF1561F58 /* Toaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toaster-dummy.m"; sourceTree = "<group>"; };
 		3F5F4D31DEC581DBA1746F03AAAC66B4 /* Pods-WebApp_Apple.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-WebApp_Apple.modulemap"; sourceTree = "<group>"; };
-		5BF675A168132FD52AED630F977FE906 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		47E8046BAE570512194A490F8AD28ED4 /* ToastCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastCenter.swift; path = Sources/ToastCenter.swift; sourceTree = "<group>"; };
+		59201099C1AC5A7F8402D57F608D7CAE /* ResourceBundle-FontAwesome.swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-FontAwesome.swift-Info.plist"; sourceTree = "<group>"; };
+		5D7C6B1F087D994C9EC4732C58EBFBA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		60C39FDE2B8C3B6093EE47A6E343D5F6 /* Pods-WebApp_Apple-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WebApp_Apple-resources.sh"; sourceTree = "<group>"; };
-		688134426F38DC90F4ABFA9D14EA9757 /* ToastView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastView.swift; path = Sources/ToastView.swift; sourceTree = "<group>"; };
+		63CD409D60D75BDD05B1D3C69626B064 /* FontAwesomeView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesomeView.swift; path = FontAwesome/FontAwesomeView.swift; sourceTree = "<group>"; };
+		677BD20CCF699E480225F577E20A63CC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
 		76A69EB95387FD21FDFFCBF17F4F7723 /* Pods-WebApp_Apple.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WebApp_Apple.debug.xcconfig"; sourceTree = "<group>"; };
+		8143C3623E7D54276A71F042E28264F7 /* Toaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toaster-prefix.pch"; sourceTree = "<group>"; };
+		87AC9F692489AB13BFA35565D40548E6 /* FontAwesome.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome.swift-umbrella.h"; sourceTree = "<group>"; };
 		91C79D125B298F9C740D8EA7A3106519 /* Pods-WebApp_Apple-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WebApp_Apple-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0B0902FF52820DCF8812B10A54AC134 /* Toaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toaster-dummy.m"; sourceTree = "<group>"; };
-		B1AF126F98257836AB2EB7D4F4AC4C96 /* Toaster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Toaster.h; path = Sources/Toaster.h; sourceTree = "<group>"; };
-		B3A641F9DEAADAB16E0691C4F07A085B /* ToastWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastWindow.swift; path = Sources/ToastWindow.swift; sourceTree = "<group>"; };
-		B8B653C7050A76B8FB644FD7A0A92FEF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD1846C4A6DE2E55EEB40D569DA06A8D /* Pods_WebApp_Apple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WebApp_Apple.framework; path = "Pods-WebApp_Apple.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDCDC858ACB8E47645D63C177CB72F5E /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Sources/Toast.swift; sourceTree = "<group>"; };
-		C3A218884A5D8B9EE76C135EFA2F609D /* ToastCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastCenter.swift; path = Sources/ToastCenter.swift; sourceTree = "<group>"; };
+		947A8BCE712A14B5CBC07DC7D57ADA40 /* FontAwesome.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FontAwesome.swift-dummy.m"; sourceTree = "<group>"; };
+		98EFCC5E81D391841231D52095C0A41C /* Pods_WebApp_Apple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WebApp_Apple.framework; path = "Pods-WebApp_Apple.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A323FF4767BEB0A03CA8B5A0CDE2A770 /* Toaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toaster.framework; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55E5C8EFA39AF4A4C17015C7E3EA1EA /* Toaster.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toaster.xcconfig; sourceTree = "<group>"; };
+		AA89C4EA342A0894A9F88B36DCBE2F79 /* FontAwesome.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FontAwesome.swift.modulemap; sourceTree = "<group>"; };
+		ACB9FCC9F55CA378C97F02D192B3D615 /* ToastView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastView.swift; path = Sources/ToastView.swift; sourceTree = "<group>"; };
+		B949CB8E79E4664F5BCB9A3C9FA6D1F0 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Sources/Toast.swift; sourceTree = "<group>"; };
+		C1D93710506D4A428351A0388ABDC6CE /* ToastWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastWindow.swift; path = Sources/ToastWindow.swift; sourceTree = "<group>"; };
 		C4664784AC9D070AF0C4C409A0C8C351 /* Pods-WebApp_Apple.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WebApp_Apple.release.xcconfig"; sourceTree = "<group>"; };
+		C4AD054AF772D6AE57A15F664850E960 /* FontAwesome.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FontAwesome.swift-prefix.pch"; sourceTree = "<group>"; };
 		C91DA64ABE73C1C90A54B9223021C522 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC8E9EDA39D694CC7F479AF2229A8421 /* Pods-WebApp_Apple-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WebApp_Apple-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D1DA8994C5871D9D18251ADBB8FB1D4C /* Toaster-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toaster-umbrella.h"; sourceTree = "<group>"; };
+		D2421E4BE5BD90C68D2B12351753E58C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28F57A5F07B072EAEC564D36AC6C78D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D385CBCB13DD8739E23B4C95C9029373 /* Pods-WebApp_Apple-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WebApp_Apple-frameworks.sh"; sourceTree = "<group>"; };
-		E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		E4B42A539BCA84F0AAD8845205845F61 /* Pods-WebApp_Apple-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WebApp_Apple-dummy.m"; sourceTree = "<group>"; };
-		E73A75DCBD19971BEB3B35299549E727 /* Toaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toaster-prefix.pch"; sourceTree = "<group>"; };
-		EC32878090C4B2B93381956161EC0930 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		FF74A0BFBF5228B38E5ADCB02C4D8CAD /* Toaster.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toaster.xcconfig; sourceTree = "<group>"; };
+		E7D50B23CBD915DCC35C995F130B6243 /* FontAwesome.otf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome.otf; path = FontAwesome/FontAwesome.otf; sourceTree = "<group>"; };
+		EC879ABA2D6CDFAFFDA85D2C356E3FCF /* Toaster-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toaster-umbrella.h"; sourceTree = "<group>"; };
+		ED0B45AD521980A8F1F8B201380DE6B1 /* Enum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Enum.swift; path = FontAwesome/Enum.swift; sourceTree = "<group>"; };
+		EDED222C9CF1D7B7BB4EB92B68091D16 /* FontAwesome_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FontAwesome_swift.framework; path = FontAwesome.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D741AE82305179C3D796A84CFA7AD5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		51A87C6FA430E23ACE13923661D4582F /* Frameworks */ = {
+		06234C821EF254AE58FAE4FBE6CA3B59 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0ABE2CC9AD0BCF34983E7FF166E4AC8 /* Foundation.framework in Frameworks */,
-				71567CBE8447787D996FAE632C584270 /* QuartzCore.framework in Frameworks */,
-				EFC61E6ED08E81587456B656895F7C0F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC28320B1F42846AE877C39CB49DDDCF /* Frameworks */ = {
+		7003411147A7CC71F82D722D70A4A641 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4930E59B07A905FB7C49DEBA13AD7FE1 /* Foundation.framework in Frameworks */,
+				9BEEEF24E72C5320582031B587A61CAE /* Foundation.framework in Frameworks */,
+				89A713C3580CF73FF840557C92370CBD /* QuartzCore.framework in Frameworks */,
+				E10B07A258A306A0CBEB0B39396987C0 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8671EA16A50DECFF230B583F4EB0A658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2BB6143A772EDE7F6C338C2349EC210 /* CoreText.framework in Frameworks */,
+				6AF5B52CE8521B567A3F704308E51AD9 /* Foundation.framework in Frameworks */,
+				15064BE99B3392B5C279A026601D7DE9 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4AC10311378830C779E1B9A19F2885F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD13CA2F3E077FB79326C90385C78C7A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+		085678940A1D8C8FD6ECC077E756217C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E5E9260013FA223D81B907D9285F6EA1 /* iOS */,
+				677BD20CCF699E480225F577E20A63CC /* CoreText.framework */,
+				D28F57A5F07B072EAEC564D36AC6C78D /* Foundation.framework */,
+				F3D741AE82305179C3D796A84CFA7AD5 /* QuartzCore.framework */,
+				5D7C6B1F087D994C9EC4732C58EBFBA5 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				085678940A1D8C8FD6ECC077E756217C /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,13 +176,47 @@
 			path = "Target Support Files/Pods-WebApp_Apple";
 			sourceTree = "<group>";
 		};
+		306A32EE9C0D2A5C1CFB59312CAD0F16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92CA070E1AEBB7FB7C4DD522A9B03FD9 /* FontAwesome.swift */,
+				423AD4CD401DE1FE40D8327E22A2987C /* Toaster */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		423AD4CD401DE1FE40D8327E22A2987C /* Toaster */ = {
+			isa = PBXGroup;
+			children = (
+				B949CB8E79E4664F5BCB9A3C9FA6D1F0 /* Toast.swift */,
+				47E8046BAE570512194A490F8AD28ED4 /* ToastCenter.swift */,
+				2BE1E6FF9F5046C6FA737D02567F5DCA /* Toaster.h */,
+				ACB9FCC9F55CA378C97F02D192B3D615 /* ToastView.swift */,
+				C1D93710506D4A428351A0388ABDC6CE /* ToastWindow.swift */,
+				ED6D33F78281A071D9632E0B41AB6FB8 /* Support Files */,
+			);
+			name = Toaster;
+			path = Toaster;
+			sourceTree = "<group>";
+		};
+		640C1597FC3CF4CB43681E54CAE4D14E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21F29E4B77FF0CBB30265B26C4296D9D /* FontAwesome.swift.bundle */,
+				EDED222C9CF1D7B7BB4EB92B68091D16 /* FontAwesome_swift.framework */,
+				98EFCC5E81D391841231D52095C0A41C /* Pods_WebApp_Apple.framework */,
+				A323FF4767BEB0A03CA8B5A0CDE2A770 /* Toaster.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				AA0851EB04E800A0544AAD4F48AA938E /* Pods */,
-				8F786D55E1C1256161292BC03A85A6DC /* Products */,
+				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
+				306A32EE9C0D2A5C1CFB59312CAD0F16 /* Pods */,
+				640C1597FC3CF4CB43681E54CAE4D14E /* Products */,
 				81674A46A0FC119FB28D7E502D4EB374 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -129,56 +229,51 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		8F786D55E1C1256161292BC03A85A6DC /* Products */ = {
+		92CA070E1AEBB7FB7C4DD522A9B03FD9 /* FontAwesome.swift */ = {
 			isa = PBXGroup;
 			children = (
-				BD1846C4A6DE2E55EEB40D569DA06A8D /* Pods_WebApp_Apple.framework */,
-				34FB8884E1F6A090B24E86387B72FF40 /* Toaster.framework */,
+				ED0B45AD521980A8F1F8B201380DE6B1 /* Enum.swift */,
+				11231A9A62539DACA552777E2C37A0C7 /* FontAwesome.swift */,
+				63CD409D60D75BDD05B1D3C69626B064 /* FontAwesomeView.swift */,
+				9E10F772624E5B836727EDC4CAF51737 /* Resources */,
+				E7AB6387CEC77C336281A0B6180D4C0F /* Support Files */,
 			);
-			name = Products;
+			name = FontAwesome.swift;
+			path = FontAwesome.swift;
 			sourceTree = "<group>";
 		};
-		9D9537351121C966E8D4BCD8C9CC2080 /* Toaster */ = {
+		9E10F772624E5B836727EDC4CAF51737 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BDCDC858ACB8E47645D63C177CB72F5E /* Toast.swift */,
-				C3A218884A5D8B9EE76C135EFA2F609D /* ToastCenter.swift */,
-				B1AF126F98257836AB2EB7D4F4AC4C96 /* Toaster.h */,
-				688134426F38DC90F4ABFA9D14EA9757 /* ToastView.swift */,
-				B3A641F9DEAADAB16E0691C4F07A085B /* ToastWindow.swift */,
-				FAD3A94EBA69890F78ACF330049E3657 /* Support Files */,
+				E7D50B23CBD915DCC35C995F130B6243 /* FontAwesome.otf */,
 			);
-			name = Toaster;
-			path = Toaster;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		AA0851EB04E800A0544AAD4F48AA938E /* Pods */ = {
+		E7AB6387CEC77C336281A0B6180D4C0F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9D9537351121C966E8D4BCD8C9CC2080 /* Toaster */,
+				AA89C4EA342A0894A9F88B36DCBE2F79 /* FontAwesome.swift.modulemap */,
+				1071269796BA5CD5D016D410915EADD3 /* FontAwesome.swift.xcconfig */,
+				947A8BCE712A14B5CBC07DC7D57ADA40 /* FontAwesome.swift-dummy.m */,
+				C4AD054AF772D6AE57A15F664850E960 /* FontAwesome.swift-prefix.pch */,
+				87AC9F692489AB13BFA35565D40548E6 /* FontAwesome.swift-umbrella.h */,
+				D2421E4BE5BD90C68D2B12351753E58C /* Info.plist */,
+				59201099C1AC5A7F8402D57F608D7CAE /* ResourceBundle-FontAwesome.swift-Info.plist */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/FontAwesome.swift";
 			sourceTree = "<group>";
 		};
-		E5E9260013FA223D81B907D9285F6EA1 /* iOS */ = {
+		ED6D33F78281A071D9632E0B41AB6FB8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				EC32878090C4B2B93381956161EC0930 /* Foundation.framework */,
-				E0203FCF2E38F9E0B8C4E69853543A3E /* QuartzCore.framework */,
-				5BF675A168132FD52AED630F977FE906 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		FAD3A94EBA69890F78ACF330049E3657 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B8B653C7050A76B8FB644FD7A0A92FEF /* Info.plist */,
-				10CEA1E37568195121B9BCABC51CE066 /* Toaster.modulemap */,
-				FF74A0BFBF5228B38E5ADCB02C4D8CAD /* Toaster.xcconfig */,
-				A0B0902FF52820DCF8812B10A54AC134 /* Toaster-dummy.m */,
-				E73A75DCBD19971BEB3B35299549E727 /* Toaster-prefix.pch */,
-				D1DA8994C5871D9D18251ADBB8FB1D4C /* Toaster-umbrella.h */,
+				2FB279E9B2C4C1BD20A0FC1FB95E7AE3 /* Info.plist */,
+				2D773FF918C8BA535B7D8310194766D6 /* Toaster.modulemap */,
+				A55E5C8EFA39AF4A4C17015C7E3EA1EA /* Toaster.xcconfig */,
+				36AFEDD993E289E7DE6F3BEBF1561F58 /* Toaster-dummy.m */,
+				8143C3623E7D54276A71F042E28264F7 /* Toaster-prefix.pch */,
+				EC879ABA2D6CDFAFFDA85D2C356E3FCF /* Toaster-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Toaster";
@@ -187,33 +282,60 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		631983FB49CF89330694CB1E9C8C17BC /* Headers */ = {
+		16583F9CD70B7EA7468DB3DFAA4E96E3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849D4D5C17A275C9A55FF6C721FE1875 /* Toaster-umbrella.h in Headers */,
-				F054E7F1EFF73AB54890860E9980F7E9 /* Toaster.h in Headers */,
+				37B85F555A38364C44DB54684713A900 /* FontAwesome.swift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB1E1D4910A13500BE5154604EA699B9 /* Headers */ = {
+		B4903616C0A538B19EA576159FED0C10 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7729BE0DE1E1CB9F158C1B9FBF5479CA /* Pods-WebApp_Apple-umbrella.h in Headers */,
+				1B4CA305CD4B1FC051813BC9D5BCD257 /* Toaster-umbrella.h in Headers */,
+				54FB652687DF1B17283960918C008F02 /* Toaster.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8FE356C0643A61DB19187663893AD12 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEE1958A22E215D607510DD0F493E33C /* Pods-WebApp_Apple-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7ADE7023050AE720349EEF3E9D542560 /* Toaster */ = {
+		2D3830CDBF7C9E2A95E3ABB84D4986EF /* Pods-WebApp_Apple */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA83095A810F92BF2EDD6A4C4BBD065C /* Build configuration list for PBXNativeTarget "Toaster" */;
+			buildConfigurationList = EA870EFA0504430A0A55DFC9BA07381B /* Build configuration list for PBXNativeTarget "Pods-WebApp_Apple" */;
 			buildPhases = (
-				75D2EE4C4FE3AADCBD0DC22E694865B7 /* Sources */,
-				51A87C6FA430E23ACE13923661D4582F /* Frameworks */,
-				631983FB49CF89330694CB1E9C8C17BC /* Headers */,
+				DFF9DADCB036453171B2C3F71D85D783 /* Sources */,
+				A4AC10311378830C779E1B9A19F2885F /* Frameworks */,
+				C8FE356C0643A61DB19187663893AD12 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				436F6E0D01AE4F95C282C8C3330B9228 /* PBXTargetDependency */,
+				BB7D44DE72627BFF50B4E0970E6A7748 /* PBXTargetDependency */,
+			);
+			name = "Pods-WebApp_Apple";
+			productName = "Pods-WebApp_Apple";
+			productReference = 98EFCC5E81D391841231D52095C0A41C /* Pods_WebApp_Apple.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		388C836969D8024DD04397A184B39149 /* Toaster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6CA1FCB568C6CE5DB8A047F293F3445 /* Build configuration list for PBXNativeTarget "Toaster" */;
+			buildPhases = (
+				D4709F166C4A81FB17395CE7FF3F5625 /* Sources */,
+				7003411147A7CC71F82D722D70A4A641 /* Frameworks */,
+				B4903616C0A538B19EA576159FED0C10 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -221,25 +343,43 @@
 			);
 			name = Toaster;
 			productName = Toaster;
-			productReference = 34FB8884E1F6A090B24E86387B72FF40 /* Toaster.framework */;
+			productReference = A323FF4767BEB0A03CA8B5A0CDE2A770 /* Toaster.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A32805DCEE554973003A1442924B3B73 /* Pods-WebApp_Apple */ = {
+		77979430716929ED71E6E262A9F9A184 /* FontAwesome.swift-FontAwesome.swift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEB91C195C9BA9E19D3372544A4B9FEB /* Build configuration list for PBXNativeTarget "Pods-WebApp_Apple" */;
+			buildConfigurationList = 05DE0A0286203DCFAEEB530E5341C739 /* Build configuration list for PBXNativeTarget "FontAwesome.swift-FontAwesome.swift" */;
 			buildPhases = (
-				252B8CFCD43EC7CC591FC8D1D72C351E /* Sources */,
-				AC28320B1F42846AE877C39CB49DDDCF /* Frameworks */,
-				BB1E1D4910A13500BE5154604EA699B9 /* Headers */,
+				6D577A16310B802EF8BE2A9513E14BFF /* Sources */,
+				06234C821EF254AE58FAE4FBE6CA3B59 /* Frameworks */,
+				FA513DCFB36BFC15E3708171B51F46DD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2C342696FC556B1F4124D1AB8784051A /* PBXTargetDependency */,
 			);
-			name = "Pods-WebApp_Apple";
-			productName = "Pods-WebApp_Apple";
-			productReference = BD1846C4A6DE2E55EEB40D569DA06A8D /* Pods_WebApp_Apple.framework */;
+			name = "FontAwesome.swift-FontAwesome.swift";
+			productName = "FontAwesome.swift-FontAwesome.swift";
+			productReference = 21F29E4B77FF0CBB30265B26C4296D9D /* FontAwesome.swift.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		C74D47B051BF84CA30E0723F127F42AD /* FontAwesome.swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 366D49D7FB8D1C96D8503A28A53F60BD /* Build configuration list for PBXNativeTarget "FontAwesome.swift" */;
+			buildPhases = (
+				DF5B49AE6632C86D57C65B841DBD1DC5 /* Sources */,
+				8671EA16A50DECFF230B583F4EB0A658 /* Frameworks */,
+				3C90D322FE0AC8A50C8AA74D813F02E3 /* Resources */,
+				16583F9CD70B7EA7468DB3DFAA4E96E3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD8376A9A7ABA0F3076D1132CBD52C61 /* PBXTargetDependency */,
+			);
+			name = FontAwesome.swift;
+			productName = FontAwesome.swift;
+			productReference = EDED222C9CF1D7B7BB4EB92B68091D16 /* FontAwesome_swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -259,50 +399,153 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 8F786D55E1C1256161292BC03A85A6DC /* Products */;
+			productRefGroup = 640C1597FC3CF4CB43681E54CAE4D14E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A32805DCEE554973003A1442924B3B73 /* Pods-WebApp_Apple */,
-				7ADE7023050AE720349EEF3E9D542560 /* Toaster */,
+				C74D47B051BF84CA30E0723F127F42AD /* FontAwesome.swift */,
+				77979430716929ED71E6E262A9F9A184 /* FontAwesome.swift-FontAwesome.swift */,
+				2D3830CDBF7C9E2A95E3ABB84D4986EF /* Pods-WebApp_Apple */,
+				388C836969D8024DD04397A184B39149 /* Toaster */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		252B8CFCD43EC7CC591FC8D1D72C351E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		3C90D322FE0AC8A50C8AA74D813F02E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				971BF8B76CD367CDC460B3DBF9C252BD /* Pods-WebApp_Apple-dummy.m in Sources */,
+				7DE3E62D329F26A90F380826B7460AA4 /* FontAwesome.swift.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75D2EE4C4FE3AADCBD0DC22E694865B7 /* Sources */ = {
+		FA513DCFB36BFC15E3708171B51F46DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C03CB07A1BF399CDE7CBB68DBAEE6B5 /* FontAwesome.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D577A16310B802EF8BE2A9513E14BFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ECAB6464B0ABBF77B3B159A5A3EE9C4 /* Toast.swift in Sources */,
-				C7916269EDDEE6777D63B20DAEBAA58F /* ToastCenter.swift in Sources */,
-				17E3E238447DA1461F5DF2E74B90D64E /* Toaster-dummy.m in Sources */,
-				53DEC6659F4EA4CE570477420D0CF4F1 /* ToastView.swift in Sources */,
-				AA44CA357A8A1E46E7B231B64FC9CB6F /* ToastWindow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4709F166C4A81FB17395CE7FF3F5625 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF1AFBB54035E92F37DF0D0367AACEB /* Toast.swift in Sources */,
+				A9EFE58009BD6B86680E4A973ED070B8 /* ToastCenter.swift in Sources */,
+				78634BE628ADC6C859CA2B112A9677D1 /* Toaster-dummy.m in Sources */,
+				BDABD08615569870C769E2B9AAA28CC9 /* ToastView.swift in Sources */,
+				5E18D737C6AD556ACF07E09400A3634D /* ToastWindow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF5B49AE6632C86D57C65B841DBD1DC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2BF28F2B3085B993F1D424DF9A6ABBB /* Enum.swift in Sources */,
+				5C0B36CA70286C8DD0002A8E94CC4553 /* FontAwesome.swift in Sources */,
+				BED5EC9770C0ADD3B9A60A028F99F432 /* FontAwesome.swift-dummy.m in Sources */,
+				1859113A28D674DBA366EF81366330C0 /* FontAwesomeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFF9DADCB036453171B2C3F71D85D783 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4ADF982957A59935094D94A08440219 /* Pods-WebApp_Apple-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2C342696FC556B1F4124D1AB8784051A /* PBXTargetDependency */ = {
+		436F6E0D01AE4F95C282C8C3330B9228 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FontAwesome.swift;
+			target = C74D47B051BF84CA30E0723F127F42AD /* FontAwesome.swift */;
+			targetProxy = 011D7568536311BAD488B69A72CD5841 /* PBXContainerItemProxy */;
+		};
+		BB7D44DE72627BFF50B4E0970E6A7748 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Toaster;
-			target = 7ADE7023050AE720349EEF3E9D542560 /* Toaster */;
-			targetProxy = A34BA2EF7486E738CF9DF883C59EB863 /* PBXContainerItemProxy */;
+			target = 388C836969D8024DD04397A184B39149 /* Toaster */;
+			targetProxy = 5085E297C1F024798B0B288CF003B84E /* PBXContainerItemProxy */;
+		};
+		FD8376A9A7ABA0F3076D1132CBD52C61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FontAwesome.swift-FontAwesome.swift";
+			target = 77979430716929ED71E6E262A9F9A184 /* FontAwesome.swift-FontAwesome.swift */;
+			targetProxy = E94380D2D52F1407587989E526482389 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0A7CDDEE88A8682EE49CF6EA9EA38D3F /* Debug */ = {
+		14E2B2BD964F7A954D43C0C2677DD4EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1071269796BA5CD5D016D410915EADD3 /* FontAwesome.swift.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FontAwesome.swift";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/ResourceBundle-FontAwesome.swift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FontAwesome.swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		159285ED4557A1AE7786EDCCD0105D7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4664784AC9D070AF0C4C409A0C8C351 /* Pods-WebApp_Apple.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-WebApp_Apple/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-WebApp_Apple/Pods-WebApp_Apple.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_WebApp_Apple;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		254DDD054BF747A7CBF7DE83EEAFB4EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76A69EB95387FD21FDFFCBF17F4F7723 /* Pods-WebApp_Apple.debug.xcconfig */;
 			buildSettings = {
@@ -338,9 +581,58 @@
 			};
 			name = Debug;
 		};
-		4F1DD8C5B89ACFADB4809FE7D8B809C9 /* Debug */ = {
+		7009D12853F280F86C6B5814C13FDF51 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF74A0BFBF5228B38E5ADCB02C4D8CAD /* Toaster.xcconfig */;
+			baseConfigurationReference = 1071269796BA5CD5D016D410915EADD3 /* FontAwesome.swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FontAwesome.swift/FontAwesome.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FontAwesome.swift/FontAwesome.swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FontAwesome_swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		79EFE2105AEE2B5047BA227012B0948C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1071269796BA5CD5D016D410915EADD3 /* FontAwesome.swift.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/FontAwesome.swift";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/ResourceBundle-FontAwesome.swift-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = FontAwesome.swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		867CB73A6E3A3B2B99DA1523D4A57AF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A55E5C8EFA39AF4A4C17015C7E3EA1EA /* Toaster.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -371,72 +663,38 @@
 			};
 			name = Debug;
 		};
-		8B0161F5B0A3A7BAE7C85FA61510A2EF /* Release */ = {
+		9EACE6C4757D243F23467BD3B8E25E4A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4664784AC9D070AF0C4C409A0C8C351 /* Pods-WebApp_Apple.release.xcconfig */;
+			baseConfigurationReference = 1071269796BA5CD5D016D410915EADD3 /* FontAwesome.swift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-WebApp_Apple/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-WebApp_Apple/Pods-WebApp_Apple.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_WebApp_Apple;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		91FFC7C5FB5EE527DDF3535B6127528F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF74A0BFBF5228B38E5ADCB02C4D8CAD /* Toaster.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Toaster/Toaster-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Toaster/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FontAwesome.swift/FontAwesome.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FontAwesome.swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Toaster/Toaster.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Toaster;
+				MODULEMAP_FILE = "Target Support Files/FontAwesome.swift/FontAwesome.swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FontAwesome_swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -482,6 +740,38 @@
 			};
 			name = Debug;
 		};
+		E401F5CB3DF360CB940ACA87171A32DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A55E5C8EFA39AF4A4C17015C7E3EA1EA /* Toaster.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Toaster/Toaster-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toaster/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Toaster/Toaster.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Toaster;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		ED4FC68AB2A4E06C718CFF338F6F156B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -525,6 +815,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		05DE0A0286203DCFAEEB530E5341C739 /* Build configuration list for PBXNativeTarget "FontAwesome.swift-FontAwesome.swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79EFE2105AEE2B5047BA227012B0948C /* Debug */,
+				14E2B2BD964F7A954D43C0C2677DD4EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -534,20 +833,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA83095A810F92BF2EDD6A4C4BBD065C /* Build configuration list for PBXNativeTarget "Toaster" */ = {
+		366D49D7FB8D1C96D8503A28A53F60BD /* Build configuration list for PBXNativeTarget "FontAwesome.swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F1DD8C5B89ACFADB4809FE7D8B809C9 /* Debug */,
-				91FFC7C5FB5EE527DDF3535B6127528F /* Release */,
+				9EACE6C4757D243F23467BD3B8E25E4A /* Debug */,
+				7009D12853F280F86C6B5814C13FDF51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEB91C195C9BA9E19D3372544A4B9FEB /* Build configuration list for PBXNativeTarget "Pods-WebApp_Apple" */ = {
+		EA870EFA0504430A0A55DFC9BA07381B /* Build configuration list for PBXNativeTarget "Pods-WebApp_Apple" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A7CDDEE88A8682EE49CF6EA9EA38D3F /* Debug */,
-				8B0161F5B0A3A7BAE7C85FA61510A2EF /* Release */,
+				254DDD054BF747A7CBF7DE83EEAFB4EF /* Debug */,
+				159285ED4557A1AE7786EDCCD0105D7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6CA1FCB568C6CE5DB8A047F293F3445 /* Build configuration list for PBXNativeTarget "Toaster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				867CB73A6E3A3B2B99DA1523D4A57AF5 /* Debug */,
+				E401F5CB3DF360CB940ACA87171A32DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

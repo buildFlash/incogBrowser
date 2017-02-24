@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FontAwesome.otf">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--LockVC-->
         <scene sceneID="LGC-o4-x0P">
@@ -56,23 +61,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cpv-bN-mb1">
+                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient-background-26046-26731-hd-wallpapers.jpg.png" translatesAutoresizingMaskIntoConstraints="NO" id="PWy-Gw-NNp">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cpv-bN-mb1">
+                                <rect key="frame" x="0.0" y="20" width="414" height="708"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AgG-Dt-smD">
-                                        <rect key="frame" x="0.0" y="8" width="414" height="710"/>
+                                        <rect key="frame" x="0.0" y="8" width="414" height="702"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dcd.png" translatesAutoresizingMaskIntoConstraints="NO" id="q4M-5u-BG9">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="177.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="175.66666666666666"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google.png" translatesAutoresizingMaskIntoConstraints="NO" id="73k-jf-wbR">
-                                                <rect key="frame" x="0.0" y="177.66666666666663" width="414" height="177.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="175.66666666666663" width="414" height="175.33333333333337"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bing.png" translatesAutoresizingMaskIntoConstraints="NO" id="UXB-9l-Jbs">
-                                                <rect key="frame" x="0.0" y="355" width="414" height="177.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="351" width="414" height="175.66666666666663"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth_1024px_ex_blue_5.png" translatesAutoresizingMaskIntoConstraints="NO" id="k2y-CS-ysO">
-                                                <rect key="frame" x="0.0" y="532.66666666666652" width="414" height="177.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="526.66666666666652" width="414" height="175.33333333333337"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -131,11 +139,15 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OpF-PR-x2y" firstAttribute="top" secondItem="Cpv-bN-mb1" secondAttribute="bottom" id="GGF-Lx-KIc"/>
+                            <constraint firstAttribute="trailing" secondItem="PWy-Gw-NNp" secondAttribute="trailing" id="0xS-mg-43J"/>
+                            <constraint firstItem="OpF-PR-x2y" firstAttribute="top" secondItem="Cpv-bN-mb1" secondAttribute="bottom" constant="8" id="GGF-Lx-KIc"/>
                             <constraint firstItem="Cpv-bN-mb1" firstAttribute="leading" secondItem="U6j-Me-gXj" secondAttribute="leading" id="Gnm-OQ-I7f"/>
+                            <constraint firstItem="OpF-PR-x2y" firstAttribute="top" secondItem="PWy-Gw-NNp" secondAttribute="bottom" id="JZ6-DK-YaG"/>
                             <constraint firstAttribute="trailing" secondItem="Cpv-bN-mb1" secondAttribute="trailing" id="LGf-uF-83Y"/>
+                            <constraint firstItem="PWy-Gw-NNp" firstAttribute="top" secondItem="y8z-lM-jmW" secondAttribute="bottom" id="Wa0-dF-5hf"/>
+                            <constraint firstItem="PWy-Gw-NNp" firstAttribute="leading" secondItem="U6j-Me-gXj" secondAttribute="leading" id="bVc-ZN-ccN"/>
                             <constraint firstAttribute="trailing" secondItem="2jK-jt-pJF" secondAttribute="trailing" constant="8" id="dac-TO-DEC"/>
                             <constraint firstItem="OpF-PR-x2y" firstAttribute="top" secondItem="2jK-jt-pJF" secondAttribute="bottom" constant="8" id="jQQ-C8-Akv"/>
                             <constraint firstItem="Cpv-bN-mb1" firstAttribute="top" secondItem="U6j-Me-gXj" secondAttribute="top" constant="20" id="n84-sk-DAP"/>
@@ -168,6 +180,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient-background-26046-26731-hd-wallpapers.jpg.png" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-5U-RXL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tB-Ck-EEp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
@@ -204,7 +219,7 @@
                                                     <constraint firstAttribute="width" constant="30" id="yaa-MV-nn0"/>
                                                 </constraints>
                                                 <state key="normal" title="X">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="StopRefreshBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qn5-3r-NOk"/>
@@ -216,6 +231,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="ao0-sr-Ywu"/>
                                                 </constraints>
+                                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </activityIndicatorView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQz-AN-z8i">
                                                 <rect key="frame" x="8" y="8" width="65" height="30"/>
@@ -224,14 +240,14 @@
                                                     <constraint firstAttribute="width" constant="65" id="zZK-bh-4eM"/>
                                                 </constraints>
                                                 <state key="normal" title="&lt; Back">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="BackBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wZa-cg-Vt0"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="qQz-AN-z8i" firstAttribute="leading" secondItem="gaJ-oF-20u" secondAttribute="leading" constant="8" id="7Z0-rT-9uK"/>
                                             <constraint firstItem="evo-Dq-BDb" firstAttribute="top" secondItem="gaJ-oF-20u" secondAttribute="top" constant="8" id="92O-pO-zLd"/>
@@ -257,58 +273,74 @@
                                         <rect key="frame" x="0.0" y="670" width="414" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO6-Hf-gn4">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82.666666666666671" height="30"/>
                                                 <state key="normal" title="Home">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="HomeBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UHI-4q-g78"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBd-WM-AP1">
-                                                <rect key="frame" x="103.66666666666669" y="0.0" width="103.33333333333331" height="30"/>
+                                                <rect key="frame" x="82.666666666666657" y="0.0" width="82.999999999999972" height="30"/>
                                                 <state key="normal" title="&lt;">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="NavBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEO-pT-Yff"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRZ-JK-dIS">
+                                                <rect key="frame" x="165.66666666666666" y="1.6666666666666288" width="82.666666666666686" height="27"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="15"/>
+                                                <state key="normal" title="mic">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="micBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="naS-HQ-dIc"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9g-J9-s3Q">
-                                                <rect key="frame" x="207.00000000000003" y="0.0" width="103.66666666666671" height="30"/>
+                                                <rect key="frame" x="248.33333333333331" y="0.0" width="82.999999999999943" height="30"/>
                                                 <state key="normal" title="&gt;">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="NavBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f2b-Wz-vLS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppV-rc-KIe">
-                                                <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="30"/>
+                                                <rect key="frame" x="331.33333333333326" y="0.0" width="82.666666666666686" height="30"/>
                                                 <state key="normal" title="Clear">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="clearBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oax-W7-yfD"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="pSE-Np-oLR"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fIE-5U-RXL" secondAttribute="bottom" id="3d6-UO-8R6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9tB-Ck-EEp" secondAttribute="bottom" id="5i7-mX-zNG"/>
                             <constraint firstAttribute="trailing" secondItem="4eG-br-4qk" secondAttribute="trailing" id="BKV-Ec-a6V"/>
                             <constraint firstItem="4eG-br-4qk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ESw-hN-wg5"/>
                             <constraint firstItem="9tB-Ck-EEp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FzB-qf-ZPh"/>
+                            <constraint firstItem="fIE-5U-RXL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PdJ-Zb-8Zm"/>
+                            <constraint firstItem="fIE-5U-RXL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="Utv-j7-06s"/>
                             <constraint firstAttribute="trailing" secondItem="9tB-Ck-EEp" secondAttribute="trailing" id="b4Y-gJ-tt6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4eG-br-4qk" secondAttribute="bottom" constant="8" id="dUM-7X-RhH"/>
                             <constraint firstItem="9tB-Ck-EEp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="fqO-9n-ncU"/>
+                            <constraint firstAttribute="trailing" secondItem="fIE-5U-RXL" secondAttribute="trailing" id="kuG-dT-fTJ"/>
                             <constraint firstItem="4eG-br-4qk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="w2e-Q1-2Rl"/>
                         </constraints>
                     </view>
@@ -321,13 +353,14 @@
                         <outlet property="incogView" destination="9tB-Ck-EEp" id="kkH-EO-5hs"/>
                         <outlet property="mainStackView" destination="4eG-br-4qk" id="Wej-eG-oa0"/>
                         <outlet property="mainView" destination="8bC-Xf-vdC" id="svC-VS-BGi"/>
+                        <outlet property="micButton" destination="IRZ-JK-dIS" id="5b6-Pk-QQF"/>
                         <outlet property="topBarStackView" destination="gaJ-oF-20u" id="MB3-zw-r54"/>
                         <outlet property="webView" destination="zIg-Of-HAt" id="7VQ-88-FGG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-187" y="457"/>
+            <point key="canvasLocation" x="-188.40579710144928" y="456.52173913043481"/>
         </scene>
         <!--PageVC-->
         <scene sceneID="AZd-e9-Kd2">
@@ -416,5 +449,6 @@
         <image name="dcd.png" width="256" height="256"/>
         <image name="earth_1024px_ex_blue_5.png" width="1024" height="1024"/>
         <image name="google.png" width="1024" height="1024"/>
+        <image name="gradient-background-26046-26731-hd-wallpapers.jpg.png" width="1920" height="1200"/>
     </resources>
 </document>

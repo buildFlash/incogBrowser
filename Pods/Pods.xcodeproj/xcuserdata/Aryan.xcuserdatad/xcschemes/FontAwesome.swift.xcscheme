@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D3830CDBF7C9E2A95E3ABB84D4986EF"
-               BuildableName = "Pods_WebApp_Apple.framework"
-               BlueprintName = "Pods-WebApp_Apple"
+               BlueprintIdentifier = "C74D47B051BF84CA30E0723F127F42AD"
+               BuildableName = "FontAwesome_swift.framework"
+               BlueprintName = "FontAwesome.swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D3830CDBF7C9E2A95E3ABB84D4986EF"
-            BuildableName = "Pods_WebApp_Apple.framework"
-            BlueprintName = "Pods-WebApp_Apple"
+            BlueprintIdentifier = "C74D47B051BF84CA30E0723F127F42AD"
+            BuildableName = "FontAwesome_swift.framework"
+            BlueprintName = "FontAwesome.swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
