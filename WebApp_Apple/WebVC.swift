@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WebVC.swift
 //  WebApp_Apple
 //
 //  Created by Aryan Sharma on 08/12/16.
@@ -13,7 +13,7 @@ import UserNotifications
 import Speech
 import FontAwesome_swift
 
-class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate, UITextFieldDelegate, SFSpeechRecognizerDelegate {
+class WebVC: UIViewController, UIWebViewDelegate,UIGestureRecognizerDelegate, UIScrollViewDelegate, UITextFieldDelegate, SFSpeechRecognizerDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -33,6 +33,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     var swipeRight: UISwipeGestureRecognizer!
     var isGrantedNotificationAccess:Bool = false
     let defaults = UserDefaults.standard
+    var addText: String!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-IN"))  //1
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
@@ -144,12 +145,13 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
 
         NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
 
+        loadUrl(addUrl: addText!)
         
-        if let search = searchEngine, search != "custom" {
-            loadSearch()
-        }else{
-            addressTextField.becomeFirstResponder()
-        }
+//        if let search = searchEngine, search != "custom" {
+//            loadUrl(addUrl: addText!)
+//        }else{
+//            addressTextField.becomeFirstResponder()
+//        }
         
         
 //        UNUserNotificationCenter.current().requestAuthorization(

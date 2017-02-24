@@ -36,6 +36,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask(rawValue: UInt(checkOrientation(viewController: self.window?.rootViewController)))
+    }
+    
+    func checkOrientation(viewController:UIViewController?)-> Int{
+        
+        if(viewController == nil){
+            
+            return Int(UIInterfaceOrientationMask.all.rawValue)//All means all orientation
+            
+        }else if (viewController is HomeVC){
+            
+            return Int(UIInterfaceOrientationMask.portrait.rawValue)//This is sign in view controller that i only want to set this to portrait mode only
+            
+        }else{
+            
+            return checkOrientation(viewController: viewController!.presentedViewController)
+        }
+    }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
