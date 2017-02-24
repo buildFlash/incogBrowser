@@ -419,6 +419,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     }
     
     func loadUrl(addUrl: String) {
+        var newUrl = ""
         print("called loadUrl")
         var searchQuery = "https://www.google.com/search?q="
         if let _ = searchEngine{
@@ -431,11 +432,19 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
                 searchQuery = "https://www.google.com/search?q="
             }
         }
-        if !addUrl.contains("."){
+        if !addUrl.contains(".") {
             url = NSURL(string: searchQuery+"\(addUrl.replacingOccurrences(of: " ", with: "+"))")
+        }else if addUrl.contains(".") && addUrl.contains(" ") {
+            print(addUrl)
+            newUrl = addUrl.replacingOccurrences(of: ".", with: "+")
+            print(newUrl)
+            newUrl = newUrl.replacingOccurrences(of: " ", with: "+")
+            print(newUrl)
+            url = NSURL(string: searchQuery+newUrl)
+            print(url)
         }else if !addUrl.contains("https://") || !addUrl.contains("http://"){
             url = NSURL(string: "http://"+"\(addUrl)")
-        }else{
+        } else {
             url = NSURL(string: "\(addUrl)")
         }
         
@@ -608,7 +617,7 @@ class ViewController: UIViewController, UIWebViewDelegate,UIGestureRecognizerDel
     }
     
     func stopBtn() {
-        StopRefreshBtn.setTitle(String.fontAwesomeIcon(name: .stopCircleO), for: .normal)
+        StopRefreshBtn.setTitle(String.fontAwesomeIcon(name: .timesCircleO), for: .normal)
         StopRefreshBtn.setTitleColor(UIColor.white, for: .normal)
     }
     

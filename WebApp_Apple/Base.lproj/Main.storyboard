@@ -218,6 +218,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="qaF-QP-0s7"/>
                                                     <constraint firstAttribute="width" constant="30" id="yaa-MV-nn0"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                                 <state key="normal" title="X">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
