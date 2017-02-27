@@ -1,0 +1,6 @@
+framework module Pods_WebApp_Apple {
+  umbrella header "Pods-WebApp_Apple-umbrella.h"
+
+  export *
+  module * { export * }
+}
